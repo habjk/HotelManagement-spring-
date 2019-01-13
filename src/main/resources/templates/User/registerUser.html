@@ -1,0 +1,337 @@
+<!doctype html>
+
+<html lang="en"
+	xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org">
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="icon" href="image/backimage1.jpg" type="image/png">
+    <title>EHotel Room Reservation</title>
+    <!-- Bootstrap CSS -->
+    <!--//Royal link-->
+    
+    <link rel="stylesheet" href="@{./css/bootstrap.css}">
+    <link rel="stylesheet" href="@{./css/style.css}">
+    <link rel="stylesheet" href="@{./css/font-awesome.min.css}">
+    <link rel="stylesheet" href="@{./css/owl.carousel.min.css}">
+    <link rel="stylesheet" href="@{./css/bootstrap-datetimepicker.min.css}">
+    <link rel="stylesheet" href="@{./css/nice-select/css/nice-select.css}">
+    <link rel="stylesheet" href="@{./css/owl.carousel.min.css}">
+    <!-- main css -->
+    <link rel="stylesheet" href="@{./css/style.css}">
+    <link rel="stylesheet" href="@{./css/responsive.css}">
+
+   <!-- //lux link-->
+
+    <link rel="stylesheet" href="@{./css/Lux/css/animate.css}">
+    <link rel="stylesheet" href="@{./css/Lux/css/icomoon.css}">
+    <link rel="stylesheet" href="@{./css/Lux/css/bootstrap.css}">
+    <link rel="stylesheet" href="@{./css/Lux/css/magnific-popup.css}">
+    <link rel="stylesheet" href="@{./css/Lux/css/flexslider.css}">
+    <link rel="stylesheet" href="@{./css/Lux/css/owl.carousel.min.css}">
+    <link rel="stylesheet" href="@{./css/Lux/css/owl.theme.default.min.css}">
+    <link rel="stylesheet" href="@{./css/Lux/css/bootstrap-datepicker.css}">
+    <link rel="stylesheet" href="@{./fonts/flaticon/font/flaticon.css}">
+    <link rel="stylesheet" href="@{./css/Lux/css/style.css}">
+    <script src="@{./js/Lux/js/modernizr-2.6.2.min.js}"></script>
+    <script src="@{./js/Lux/js/respond.min.js}"></script>
+
+
+
+
+</head>
+<style type="@{text/css}">
+    .navigation-bar{
+        background: #CCC;
+        opacity: 0.6;
+    }
+</style>
+
+<body>
+ <div class="navigation-bar">
+<nav class="colorlib-nav" role="navigation">
+    <div class="top">
+        <div class="container">
+            <div class="row">
+<!--                 <div class="col-xs-4">
+                    <p class="site">www.yoursitehere.com</p>
+                </div> -->
+             <div class="col-xs-8 text-right">
+                    <p class="num">Call: +251930856544</p>
+                    <ul class="colorlib-social">
+                        <!--<li><a href="#"><i class="icon-twitter"></i></a></li>-->
+                        <!--<li><a href="#"><i class="icon-facebook"></i></a></li>-->
+                        <!--<li><a href="#"><i class="icon-linkedin"></i></a></li>-->
+                        <!--<li><a href="#"><i class="icon-dribbble"></i></a></li>-->
+                   </ul>
+                </div>
+                <div class="col-xs-4 text-right">
+                <a href="register/user">Register</a>	
+                </div>
+            </div>
+        </div>
+    </div>-->
+    <div class="top-menu">
+        <div class="container">
+            <div class="row">
+                <div class="col-xs-2">
+                    <div id="colorlib-logo"><a href="Index.html">EHotel</a></div>
+                </div>
+                <div class="col-xs-10 text-right menu-1">
+                    <ul>
+                        <li class="active"><a href="index.html">Home</a></li>
+                        <li><a href="pages/Hotels.html">Hotel Profile</a></li>
+                        <li><a href="pages/Rooms.html">Rooms</a></li>
+                        <li><a href="blog.html">Book Now</a></li>
+                        <li><a href="about.html">About</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</nav>
+</div>
+
+
+
+
+<aside id="colorlib-hero">
+    <div class="flexslider">
+		    <section class="site-section">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-6">
+            <h2 class="mb-5">Registration Form</h2>
+            	<c:url var="logoutUrl" value="register"/>
+                <form  method="post" th:object="${register}">
+                  <div class="row">
+                      <div class="col-sm-12 form-group">
+                          
+                          <label for="">First Name</label>
+                         
+                          <div style="position: relative;">
+       <!--                      <span class="fa fa-calendar icon" style="position: absolute; right: 15px; top: 10px;"></span> -->
+                             <input type='text' class="form-control" th:field="*{firstname}"/> 
+                             <span class="text-danger" th:if="${#fields.hasErrors('firstname')}" 
+                             th:errors="*{firstname}">First Name Error </span>                        
+                          </div>
+                      </div>
+                      <div class="col-sm-12 form-group">
+                          
+                          <label for="">Last Name</label>
+                         
+                          <div style="position: relative;">
+       <!--                      <span class="fa fa-calendar icon" style="position: absolute; right: 15px; top: 10px;"></span> -->
+                            <input type='text' class="form-control" th:field="*{lastname}"/>
+                             <span class="text-danger" th:if="${#fields.hasErrors('lastname')}"
+                          							th:errors="*{lastname}">Last Name Error </span>
+                         
+                          </div>
+                      </div>
+                      <div class="col-sm-12 form-group">
+                          
+                          <label for="">Middle Name</label>
+                         
+                          <div style="position: relative;">
+       <!--                      <span class="fa fa-calendar icon" style="position: absolute; right: 15px; top: 10px;"></span> -->
+                            <input type='text' class="form-control" th:field="*{middlename}"/>
+                             <span class="text-danger" th:if="${#fields.hasErrors('middlename')}"
+                          							th:errors="*{middlename}">Middle Name Error </span>
+                         
+                          </div>
+                      </div>
+
+                      <div class="col-sm-12 form-group">
+                          
+                          <label for="">Email</label>
+                          <div style="position: relative;">
+  <!--                           <span class="fa fa-calendar icon" style="position: absolute; right: 15px; top: 10px;"></span> -->
+                            <input type='email' class="form-control" th:field="*{email}" />
+                              <span class="text-danger" th:if="${#fields.hasErrors('email')}"
+                          							th:errors="*{email}">Email Error </span>
+                          </div>
+                      </div>
+                      <div class="col-sm-12 form-group">
+                          
+                          <label for="">Password</label>
+                          <div style="position: relative;">
+  <!--                           <span class="fa fa-calendar icon" style="position: absolute; right: 15px; top: 10px;"></span> -->
+                            <input type='text' class="form-control" th:field="*{password}" />
+                              <span class="text-danger" th:if="${#fields.hasErrors('password')}"
+                          							th:errors="*{password}">Password Error </span>
+                          </div>
+                      </div>
+                      
+                                            <div class="col-sm-12 form-group">
+                          
+                          <label for="">Id No</label>
+                          <div style="position: relative;">
+  <!--                           <span class="fa fa-calendar icon" style="position: absolute; right: 15px; top: 10px;"></span> -->
+                            <input type='text' class="form-control" th:field="*{idno}" />
+                              <span class="text-danger" th:if="${#fields.hasErrors('idno')}"
+                          							th:errors="*{idno}">Password Error </span>
+                          </div>
+                      </div>
+                      
+                        <div class="col-sm-12 form-group">
+                         
+                          <label for="">Address</label>
+                          <br/>
+                          <lable for="">City</lable>
+                          <div style="position: relative;">
+  <!--                           <span class="fa fa-calendar icon" style="position: absolute; right: 15px; top: 10px;"></span> -->
+                            <input type='text' class="form-control" th:field="*{city}" />
+                              <span class="text-danger" th:if="${#fields.hasErrors('city')}"
+                          							th:errors="*{city}">City Error </span>
+                          </div>
+                      </div>
+                      <div class="col-sm-12 form-group">                          
+                          <lable for="">Sub City</lable>
+                          <div style="position: relative;">
+  <!--                           <span class="fa fa-calendar icon" style="position: absolute; right: 15px; top: 10px;"></span> -->
+                            <input type='text' class="form-control" th:field="*{subCity}" />
+                              <span class="text-danger" th:if="${#fields.hasErrors('subCity')}"
+                          							th:errors="*{subCity}">Sub City Error </span>
+                          </div>
+                      </div>
+
+                        <div class="col-sm-12 form-group">                                                  
+                          <lable for="">State</lable>
+                          <div style="position: relative;">
+  <!--                           <span class="fa fa-calendar icon" style="position: absolute; right: 15px; top: 10px;"></span> -->
+                            <input type='text' class="form-control" th:field="*{state}" />
+                              <span class="text-danger" th:if="${#fields.hasErrors('state')}"
+                          							th:errors="*{state}">State Error </span>
+                          </div>
+                      </div>
+                      <div class="col-sm-12 form-group">                                                  
+                          <lable for="">Account No</lable>
+                          <div style="position: relative;">
+  <!--                           <span class="fa fa-calendar icon" style="position: absolute; right: 15px; top: 10px;"></span> -->
+                            <input type='text' class="form-control" th:field="*{accno}" />
+                              <span class="text-danger" th:if="${#fields.hasErrors('accno')}"
+                          							th:errors="*{accno}">AccNo Error </span>
+                          </div>
+                      </div>
+					                      
+                  </div>
+				 
+                  <div class="row">
+                    <div class="col-md-6 form-group">
+                    <input type="hidden"
+    						name="${_csrf.parameterName}"
+   							value="${_csrf.token}"/>
+                      <input type="submit" value="Register Now" class="btn btn-primary">
+                    </div>
+                  </div>
+                  
+                </form>
+              </div>
+        </div>
+      </div>
+    </section>
+		
+    </div>
+</aside>
+
+
+<!--footer -->
+<footer id="colorlib-footer" role="contentinfo">
+    <div class="container">
+        <div class="row row-pb-md">
+            <div class="col-md-3 colorlib-widget">
+                <h4>EHotel Reservation</h4>
+                <p>Facilis ipsum reprehenderit nemo molestias. Aut cum mollitia reprehenderit. Eos cumque dicta adipisci architecto culpa amet.</p>
+                <p>
+                <ul class="colorlib-social-icons">
+                    <li><a href="#"><i class="icon-twitter"></i></a></li>
+                    <li><a href="#"><i class="icon-facebook"></i></a></li>
+                    <li><a href="#"><i class="icon-linkedin"></i></a></li>
+                    <li><a href="#"><i class="icon-dribbble"></i></a></li>
+                </ul>
+                </p>
+            </div>
+            <div class="col-md-3 colorlib-widget">
+                <h4>Quick Links</h4>
+                <p>
+                <ul class="colorlib-footer-links">
+                    <li><a href="#">Home</a></li>
+                    <li><a href="#">Hotels</a></li>
+                    <li><a href="pages/Rooms.html">Rooms</a></li>
+                    <li><a href="#">Contact Us</a></li>
+                </ul>
+                </p>
+            </div>
+            <div class="col-md-3">
+                <h4>Recents Blog Post</h4>
+                <ul class="colorlib-footer-links">
+                    <li><a href="#">The Ultimate Packing List For Female Travelers</a></li>
+                    <li><a href="#">How These 5 People Found The Path to Their Dream Trip</a></li>
+                    <li><a href="#">A Definitive Guide to the Best Dining and Drinking Venues in the City</a></li>
+                </ul>
+            </div>
+
+            <div class="col-md-3 col-md-push-1">
+                <h4>Contact Information</h4>
+                <ul class="colorlib-footer-links">
+                    <li>6 Kilo , <br> Addis Ababa , Ethiopia</li>
+                    <li><a href="tel:+251930856544">+ 930856544</a></li>
+                    <li><a href="mailto:kirubelayehu@gmail.com">kirubelayehu@gmail.com</a></li>
+                    <li><a href="">Ehotel.com</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-12 text-center">
+                <p>
+                    <small class="block"><!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+                        Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved |<a href="Index.html" target="_blank">EHotel</a>
+                        <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. --></small>
+
+                </p>
+            </div>
+        </div>
+    </div>
+</footer>
+</div>
+
+<div class="gototop js-top">
+    <a href="#" class="js-gotop"><i class="icon-arrow-up2"></i></a>
+</div>
+
+
+
+
+
+<!--//royal script-->
+<script src="./js/jquery-3.2.1.min.js"></script>
+<script src="./js/popper.js"></script>
+<script src="./js/bootstrap.min.js"></script>
+<script src="./js/owl.carousel.min.js"></script>
+<script src="./js/jquery.ajaxchimp.min.js"></script>
+<script src="./js/mail-script.js"></script>
+<script src="./js/bootstrap-datetimepicker.min.js"></script>
+<script src="./js/nice-select/js/jquery.nice-select.js"></script>
+<script src="./js/mail-script.js"></script>
+<script src="./js/stellar.js"></script>
+<script src="./js/simpleLightbox.min.js"></script>
+<script src="./js/custom.js"></script>
+
+<!--//lux script-->
+<script src="./js/Lux/js/jquery.min.js"></script>
+<script src="./js/Lux/js/jquery.easing.1.3.js"></script>
+<script src="./js/Lux/js/bootstrap.min.js"></script>
+<script src="./js/Lux/js/jquery.waypoints.min.js"></script>
+<script src="./js/Lux/js/jquery.flexslider-min.js"></script>
+<script src="./js/owl.carousel.min.js"></script>
+<script src="./js/Lux/js/jquery.magnific-popup.min.js"></script>
+<script src="./js/Lux/js/magnific-popup-options.js"></script>
+<script src="./js/Lux/js/bootstrap-datepicker.js"></script>
+<script src="./js/Lux/js/main.js"></script>
+
+
+</body>
+</html>
