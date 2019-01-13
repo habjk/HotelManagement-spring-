@@ -154,16 +154,28 @@
                       
                   </div>
 				 <h2 ></h2>
+<<<<<<< HEAD
                   
+=======
+                 <div th:object="${registerManager}">
+>>>>>>> c666b211eb6dc5a4fbb55a6e9ca80961c9bcf826
                   <div class="row">
                   	<h3 class="mb-5">Hotel Managers's</h3>
                     <div class="col-md-12 form-group">
                       <label for="email">Email</label>
+<<<<<<< HEAD
                       <input type="email" id="email" class="form-control ">
                     </div>
                     <div class="col-md-12 form-group">
                       <label for="password">password</label>
                       <input type="password" id="email" class="form-control ">
+=======
+                      <input type="email" th:field="*{email}" class="form-control ">
+                    </div>
+                    <div class="col-md-12 form-group">
+                      <label for="password">password</label>
+                      <input type="password" th:field="*{password}" class="form-control ">
+>>>>>>> c666b211eb6dc5a4fbb55a6e9ca80961c9bcf826
                     </div>
                   </div>
                   
@@ -174,6 +186,11 @@
    							value="${_csrf.token}"/>
                       <input type="submit" value="Register Now" class="btn btn-primary">
                     </div>
+<<<<<<< HEAD
+=======
+                    </div>
+                    
+>>>>>>> c666b211eb6dc5a4fbb55a6e9ca80961c9bcf826
                   </div>
                 </form>
               </div>

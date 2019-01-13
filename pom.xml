@@ -71,10 +71,13 @@
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-jdbc</artifactId>
 		</dependency>
+<<<<<<< HEAD
 		<dependency>
 			<groupId>org.projectlombok</groupId>
 			<artifactId>lombok</artifactId>
 		</dependency>
+=======
+>>>>>>> c666b211eb6dc5a4fbb55a6e9ca80961c9bcf826
 	</dependencies>
 
 	<build>
