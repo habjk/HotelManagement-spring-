@@ -1,15 +1,11 @@
-package com.KKHHH.eHotels.repositories;
+package com.KKHHH.eHotels.repository;
 
-import org.springframework.data.repository.CrudRepository;
 
-<<<<<<< HEAD
-import com.KKHHH.eHotels.domains.User;
-public interface UserRepository extends CrudRepository<User,Long>{
-=======
+import com.KKHHH.eHotels.model.User;
+import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.stereotype.Repository;
 
-import com.KKHHH.eHotels.domains.User;
-
-public interface UserRepository extends CrudRepository<User,String>{
->>>>>>> c666b211eb6dc5a4fbb55a6e9ca80961c9bcf826
-
+@Repository
+public interface UserRepository extends JpaRepository<User, Long> {
+	User findByEmail(String email);
 }

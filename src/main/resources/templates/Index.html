@@ -1,191 +1,279 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <!-- Required meta tags -->
+<!doctype html>
+<html xmlns:th="http://www.thymeleaf.org"
+      xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity3">
+  <head>
+    <title>home</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <link rel="icon" href="image/backimage1.jpg" type="image/png">
-    <title>EHotel Room Reservation</title>
-    <!-- Bootstrap CSS -->
-    <!--//Royal link-->
+
+    <link href="https://fonts.googleapis.com/css?family=Playfair+Display:400,700,900|Rubik:300,400,700" rel="stylesheet">
+
     <link rel="stylesheet" href="css/bootstrap.css">
-    <link rel="stylesheet" href="css/style.css">
-    <link rel="stylesheet" href="css/font-awesome.min.css">
+
+
+<link rel="stylesheet" href="css/New folder/_elements.css">
+<link rel="stylesheet" href="css/New folder/_footer.css">
+<link rel="stylesheet" href="css/New folder/_testimonial.css">
+
+<link rel="stylesheet" href="css/New folder/_variables.css">
+<link rel="stylesheet" href="css/New folder/bootstrap.css">
+<link rel="stylesheet" href="css/New folder/bootstrap-datetimepicker.min.css">
+
+<link rel="stylesheet" href="css/New folder/bootstrap-select.css">
+<link rel="stylesheet" href="css/New folder/font-awesome.min.css">
+<link rel="stylesheet" href="css/New folder/owl.carousel.min.css">
+
+<link rel="stylesheet" href="css/New folder/responsive.css">
+<link rel="stylesheet" href="css/New folder/simpleLightbox.css">
+<link rel="stylesheet" href="css/New folder/style (Mohammad Rocky's conflicted copy 2018-05-08).css">
+<link rel="stylesheet" href="css/New folder/style.css">
+<!-- <link rel="stylesheet" href="css/New folder/_elements.css"> -->
+
+
+
+
+
+    <link rel="stylesheet" href="css/animate.css">
     <link rel="stylesheet" href="css/owl.carousel.min.css">
-    <link rel="stylesheet" href="css/bootstrap-datetimepicker.min.css">
-    <link rel="stylesheet" href="css/nice-select/css/nice-select.css">
-    <link rel="stylesheet" href="css/owl.carousel.min.css">
-    <!-- main css -->
+
+    <link rel="stylesheet" href="fonts/ionicons/css/ionicons.min.css">
+    <link rel="stylesheet" href="fonts/fontawesome/css/font-awesome.min.css">
+    <link rel="stylesheet" href="css/magnific-popup.css">
+
+    <!-- Theme Style -->
     <link rel="stylesheet" href="css/style.css">
-    <link rel="stylesheet" href="css/responsive.css">
+  </head>
+  <style type="text/css">
+    footer{
+      background: #302939;
 
-   <!-- //lux link-->
-
-    <link rel="stylesheet" href="css/Lux/css/animate.css">
-    <link rel="stylesheet" href="css/Lux/css/icomoon.css">
-    <link rel="stylesheet" href="css/Lux/css/bootstrap.css">
-    <link rel="stylesheet" href="css/Lux/css/magnific-popup.css">
-    <link rel="stylesheet" href="css/Lux/css/flexslider.css">
-    <link rel="stylesheet" href="css/Lux/css/owl.carousel.min.css">
-    <link rel="stylesheet" href="css/Lux/css/owl.theme.default.min.css">
-    <link rel="stylesheet" href="css/Lux/css/bootstrap-datepicker.css">
-    <link rel="stylesheet" href="fonts/flaticon/font/flaticon.css">
-    <link rel="stylesheet" href="css/Lux/css/style.css">
-    <script src="js/Lux/js/modernizr-2.6.2.min.js"></script>
-    <script src="js/Lux/js/respond.min.js"></script>
-
-
-
-
-</head>
-<style>
-    .navigation-bar{
-        background: #CCC;
-        opacity: 0.6;
     }
-</style>
+    .colorlib-footer-links{
+      color: rgb(255,255,255,0.5);
+    }
+    footer li,footer h4{
+      list-style: none;
+      color: #fff;
+    }
+    footer -colorlib-footer-links,p {
+      color: rgb(255,255,255,0.5);
 
-<body>
-<div class="navigation-bar">
-<nav class="colorlib-nav" role="navigation">
-    <div class="top">
+    }
+
+  </style>
+  <body>
+    
+    <header role="banner">
+     
+      <nav class="navbar navbar-expand-md navbar-dark bg-light">
         <div class="container">
-            <div class="row">
-<<<<<<< HEAD
-<!--                 <div class="col-xs-4">
-                    <p class="site">www.yoursitehere.com</p>
-                </div> -->
-             <div class="col-xs-8 text-right">
-=======
-                <!--<div class="col-xs-4">-->
-                    <!--<p class="site">www.yoursitehere.com</p>-->
-                <!--</div>-->
-                <div class="col-xs-8 text-right">
->>>>>>> c666b211eb6dc5a4fbb55a6e9ca80961c9bcf826
-                    <p class="num">Call: +251930856544</p>
-                    <ul class="colorlib-social">
-                        <!--<li><a href="#"><i class="icon-twitter"></i></a></li>-->
-                        <!--<li><a href="#"><i class="icon-facebook"></i></a></li>-->
-                        <!--<li><a href="#"><i class="icon-linkedin"></i></a></li>-->
-                        <!--<li><a href="#"><i class="icon-dribbble"></i></a></li>-->
-<<<<<<< HEAD
-                   </ul>
+          <a class="navbar-brand" href="index.html">EHotel</a>
+          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExample05" aria-controls="navbarsExample05" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+
+          <div class="collapse navbar-collapse navbar-light" id="navbarsExample05">
+            <ul class="navbar-nav ml-auto pl-lg-5 pl-0">
+              <li class="nav-item">
+                <a class="nav-link active" href="index.html">Home</a>
+              </li>
+              <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="rooms.html" id="dropdown04" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Remove Account</a>
+                <div class="dropdown-menu" aria-labelledby="dropdown04">
+                  <a class="dropdown-item" href="rooms.html">User</a>
+                  <a class="dropdown-item" href="rooms.html">Hotel</a>
+                  <a class="dropdown-item" href="rooms.html">Comments</a>
+                  <a class="dropdown-item" href="rooms.html">Rooms</a>
                 </div>
-                <div class="col-xs-4 text-right">
-                <a href="register/user">Register</a>	
-                </div>
-            </div>
+
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="Blog.html">Register Hotel</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="about.html">About</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="contact2.html">Contact</a>
+              </li>
+
+               <li class="nav-item cta">
+                <a class="nav-link" href="booknow.html"><span>Reserve Rooms</span></a>
+              </li>
+            </ul>
+            
+          </div>
         </div>
-    </div>-->
-=======
-                    </ul>
-                </div>
+      </nav>
+    </header>
+    <!-- END header -->
+
+    <section class="site-hero overlay" data-stellar-background-ratio="0.5" style="background-image: url(images/big_image_1.jpg);">
+      <div class="container">
+        <div class="row align-items-center site-hero-inner justify-content-center">
+          <div class="col-md-12 text-center">
+
+            <div class="mb-5 element-animate">
+              <h1>Welcome To EHotel</h1>
+              
+             
             </div>
+
+          </div>
         </div>
-    </div>
->>>>>>> c666b211eb6dc5a4fbb55a6e9ca80961c9bcf826
-    <div class="top-menu">
-        <div class="container">
-            <div class="row">
-                <div class="col-xs-2">
-                    <div id="colorlib-logo"><a href="Index.html">EHotel</a></div>
-                </div>
-                <div class="col-xs-10 text-right menu-1">
-                    <ul>
-                        <li class="active"><a href="index.html">Home</a></li>
-                        <li><a href="pages/Hotels.html">Hotel Profile</a></li>
-                        <li><a href="pages/Rooms.html">Rooms</a></li>
-<<<<<<< HEAD
-                        <li><a href="blog.html">Book Now</a></li>
-=======
-                        <li><a href="register/hotel">Register</a></li>
->>>>>>> c666b211eb6dc5a4fbb55a6e9ca80961c9bcf826
-                        <li><a href="about.html">About</a></li>
-                        <li><a href="contact.html">Contact</a></li>
-                    </ul>
-                </div>
+      </div>
+    </section>
+    <!-- END section -->
+
+    
+    <!-- END section -->
+
+   
+    
+    
+    <!-- END section -->
+    
+    <section class="site-section bg-light">
+      <div class="container">
+        <div class="row mb-5">
+          <div class="col-md-12 heading-wrap text-center">
+            <h4 class="sub-heading">Our Blog</h4>
+              <h2 class="heading">Registered Hotels</h2>
+          </div>
+        </div>
+        <div class="row ">
+          <div class="col-md-4">
+            <div class="post-entry">
+             <!--  <img src="images/img_3.jpg" alt="Image placeholder" class="img-fluid"> -->
+              <div class="body-text">
+                <div class="category">Rooms</div>
+                <h3 class="mb-3"><a href="#">Capital Hotel</a></h3>
+                 <img src="images/capita.jpg" alt="Image placeholder" class="img-fluid" style="width: 350px;height: 270px">
+                <p><a href="booknow.html" class="btn btn-primary btn-outline-primary btn-sm">book now</a></p>
+              </div>
             </div>
+          </div>
+          <div class="col-md-4">
+            <div class="post-entry">
+             <!--  <img src="images/img_6.jpg" alt="Image placeholder" class="img-fluid"> -->
+              <div class="body-text">
+                <div class="category">News</div>
+                <h3 class="mb-3"><a href="#">Sheraton Addis</a></h3>
+                 <img src="images/sheraton.jpg" alt="Image placeholder" class="img-fluid" style="width: 350px;height: 270px">
+                <p><a href="booknow.html" class="btn btn-primary btn-outline-primary btn-sm">book now</a></p>
+              </div>
+            </div>
+          </div>
+
+
+
+
+
+
+          <div class="col-md-4">
+            <div class="post-entry">
+             <!--  <img src="images/img_5.jpg" alt="Image placeholder" class="img-fluid"> -->
+              <div class="body-text">
+                <div class="category">ws</div>
+                <h3 class="mb-3"><a href="#">Golden Tulip Addis hotel</a></h3>
+                <img src="images/Golden_Tulip_Addis_Ababa_Hotel.jpg" alt="Image placeholder" class="img-fluid" style="width: 350px;height: 270px">
+                <p><a href="booknow.html" class="btn btn-primary btn-outline-primary btn-sm">book now</a></p>
+              </div>
+            </div>
+          </div>
+
+
+
+           <div class="col-md-4">
+            <div class="post-entry">
+             <!--  <img src="images/img_5.jpg" alt="Image placeholder" class="img-fluid"> -->
+              <div class="body-text">
+                <div class="category">ws</div>
+                <h3 class="mb-3"><a href="#">Marriott_Executive_Apartments </a></h3>
+                <img src="images/Marriott_Executive_Apartments.jpg" alt="Image placeholder" class="img-fluid" style="width: 350px;height: 270px">
+                <p><a href="booknow.html" class="btn btn-primary btn-outline-primary btn-sm">book now</a></p>
+              </div>
+            </div>
+          </div>
+
+         <div class="col-md-4">
+            <div class="post-entry">
+              <!-- <img src="images/img_5.jpg" alt="Image placeholder" class="img-fluid"> -->
+              <div class="body-text">
+                <div class="category">ws</div>
+                <h3 class="mb-3"><a href="#">Jupiter International Hotel</a></h3>
+                <img src="images/Jupiter_International_Hotel.jpg" alt="Image placeholder" class="img-fluid" style="width: 350px;height: 270px">
+                <p><a href="booknow.html" class="btn btn-primary btn-outline-primary btn-sm">book now</a></p>
+              </div>
+            </div>
+          </div>
+
+         
+
+          <div class="col-md-4">
+            <div class="post-entry">
+             <!--  <img src="images/img_5.jpg" alt="Image placeholder" class="img-fluid"> -->
+              <div class="body-text">
+                <div class="category">ws</div>
+                <h3 class="mb-3"><a href="#">Radisson_Blu_Hotel</a></h3>
+                <img src="images/Radisson_Blu_Hotel.jpg" alt="Image placeholder" class="img-fluid" style="width: 350px;height: 270px">
+                <p><a href="booknow.html" class="btn btn-primary btn-outline-primary btn-sm">book now</a></p>
+              </div>
+            </div>
+          </div>
+          
+
+
+           <div class="col-md-4">
+            <div class="post-entry">
+             <!--  <img src="images/img_5.jpg" alt="Image placeholder" class="img-fluid"> -->
+              <div class="body-text">
+                <div class="category">ws</div>
+                <h3 class="mb-3"><a href="#">Sherar Addis Hotel</a></h3>
+                <img src="images/sherar-addis.jpg" alt="Image placeholder" class="img-fluid" style="width: 350px;height: 270px">
+                <p><a href="booknow.html" class="btn btn-primary btn-outline-primary btn-sm">book now</a></p>
+              </div>
+            </div>
+          </div>
+          
+
+           <div class="col-md-4">
+            <div class="post-entry">
+             <!--  <img src="images/img_5.jpg" alt="Image placeholder" class="img-fluid"> -->
+              <div class="body-text">
+                <div class="category">ws</div>
+                <h3 class="mb-3"><a href="#">Eliana Hotel </a></h3>
+                <img src="images/Eliana-Hotel.jpg" alt="Image placeholder" class="img-fluid" style="width: 350px;height: 270px">
+                <p><a href="booknow.html" class="btn btn-primary btn-outline-primary btn-sm">book now</a></p>
+              </div>
+            </div>
+          </div>
+
+         <div class="col-md-4">
+            <div class="post-entry">
+             <!--  <img src="images/img_5.jpg" alt="Image placeholder" class="img-fluid"> -->
+              <div class="body-text">
+                <div class="category">ws</div>
+                <h3 class="mb-3"><a href="#">Golden_Tulip_Addis_Ababa_Hotel</a></h3>
+                <img src="images/Golden_Tulip_Addis_Ababa_Hotel.jpg" alt="Image placeholder" class="img-fluid" style="width: 350px;height: 270px">
+                <p><a href="booknow.html" class="btn btn-primary btn-outline-primary btn-sm">book now</a></p>
+              </div>
+            </div>
+          </div>
+           <p><a href="Blog.html" class="btn btn-primary">Register Hotel</a></p>
+            <p><a href="Blog.html" class="btn btn-primary">View by Location</a></p>
+             <p><a href="Blog.html" class="btn btn-primary">View all hotels</a></p>
+              <p><a href="Blog.html" class="btn btn-primary">view special </a></p>
+               <p><a href="Blog.html" class="btn btn-primary">Reserve Rooms</a></p>
+
         </div>
-    </div>
-</nav>
-</div>
+      </div>
+    </section>
+    <!-- END section -->
 
 
 
-
-<aside id="colorlib-hero">
-    <div class="flexslider">
-        <ul class="slides">
-            <li style="background-image: url(image/img_bg_5.jpg);">
-                <div class="overlay"></div>
-                <div class="container-fluid">
-                    <div class="row">
-                        <div class="col-md-6 col-sm-12 col-md-offset-3 slider-text">
-                            <div class="slider-text-inner text-center">
-                                <h2>Welcome to the EHotel Reservation</h2>
-                                <h1>EHotel Hotel Reservation </h1>
-<<<<<<< HEAD
-                                <p><a class="btn btn-primary btn-demo" href="pages/Hotels.html"></i> View Hotels</a> <a class="btn btn-primary btn-learn">Book Know</a></p>
-=======
-                                <p><a class="btn btn-primary btn-demo" href="pages/Hotels.html"></i> View Hotels</a> <a class="btn btn-primary btn-learn" href="register/hotel">Join Us</a></p>
->>>>>>> c666b211eb6dc5a4fbb55a6e9ca80961c9bcf826
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </li>
-            <li style="background-image: url(image/img_bg_1.jpg);">
-                <div class="overlay"></div>
-                <div class="container-fluid">
-                    <div class="row">
-                        <div class="col-md-6 col-sm-12 col-md-offset-3 slider-text">
-                            <div class="slider-text-inner text-center">
-                                <h2>Discover &amp; Enjoy &amp; Reserve</h2>
-                                <h1>Everything you need in EHotel</h1>
-<<<<<<< HEAD
-                                <p><a class="btn btn-primary btn-demo" href="pages/Hotels.html"></i> View Hotels</a> <a class="btn btn-primary btn-learn">Book Know</a></p>
-=======
-                                <p><a class="btn btn-primary btn-demo" href="pages/Hotels.html"></i> View Hotels</a> <a class="btn btn-primary btn-learn" href="register/hotel">Join Us</a></p>
->>>>>>> c666b211eb6dc5a4fbb55a6e9ca80961c9bcf826
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </li>
-            <li style="background-image: url(image/img_bg_3.jpg);">
-                <div class="overlay"></div>
-                <div class="container-fluids">
-                    <div class="row">
-                        <div class="col-md-6 col-sm-12 col-md-offset-3 slider-text">
-                            <div class="slider-text-inner text-center">
-                                <h2>You Are Invited  To Reserve Where Ever You Want!</h2>
-                                <h1>We Know How To Please You</h1>
-                                <p><a class="btn btn-primary btn-demo" href="pages/Hotels.html"></i> View Hotels</a> <a class="btn btn-primary btn-learn">Book Know</a></p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </li>
-            <li style="background-image: url(image/img_bg_4.jpg);">
-                <div class="overlay"></div>
-                <div class="container-fluid">
-                    <div class="row">
-                        <div class="col-md-6 col-sm-12 col-md-offset-3 slider-text">
-                            <div class="slider-text-inner text-center">
-                                <h2>Come &amp; Contact With Us</h2>
-                                <h1>Reserve Using EHotel</h1>
-                                <p><a class="btn btn-primary btn-demo" href="#"></i> View Hotels</a> <a class="btn btn-primary btn-learn">Book Know</a></p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </li>
-        </ul>
-    </div>
-</aside>
-
-
-<!--footer -->
+   <!--footer -->
 <footer id="colorlib-footer" role="contentinfo">
     <div class="container">
         <div class="row row-pb-md">
@@ -205,19 +293,20 @@
                 <h4>Quick Links</h4>
                 <p>
                 <ul class="colorlib-footer-links">
-                    <li><a href="#">Home</a></li>
-                    <li><a href="#">Hotels</a></li>
-                    <li><a href="pages/Rooms.html">Rooms</a></li>
-                    <li><a href="#">Contact Us</a></li>
+                    <li><a href="#" style="color: rgb(255,255,255,0.5)">Home</a></li>
+                    <li><a href="#" style="color: rgb(255,255,255,0.5)">Hotels</a></li>
+                    <li><a href="pages/Rooms.html" style="color: rgb(255,255,255,0.5)">Rooms</a></li>
+                    <li><a href="#" style="color: rgb(255,255,255,0.5)">Contact Us</a></li>
+                    <li sec:authorize="isAuthenticated()"><a th:href="@{/logout}" style="color: rgb(255,255,255,0.5)">Logout</a></li>
                 </ul>
                 </p>
             </div>
             <div class="col-md-3">
                 <h4>Recents Blog Post</h4>
                 <ul class="colorlib-footer-links">
-                    <li><a href="#">The Ultimate Packing List For Female Travelers</a></li>
-                    <li><a href="#">How These 5 People Found The Path to Their Dream Trip</a></li>
-                    <li><a href="#">A Definitive Guide to the Best Dining and Drinking Venues in the City</a></li>
+                    <li><a href="#" style="color: rgb(255,255,255,0.5)">The Ultimate Packing List For Female Travelers</a></li>
+                    <li><a href="#" style="color: rgb(255,255,255,0.5)">How These 5 People Found The Path to Their Dream Trip</a></li>
+                    <li><a href="#" style="color: rgb(255,255,255,0.5)">A Definitive Guide to the Best Dining and Drinking Venues in the City</a></li>
                 </ul>
             </div>
 
@@ -225,9 +314,9 @@
                 <h4>Contact Information</h4>
                 <ul class="colorlib-footer-links">
                     <li>6 Kilo , <br> Addis Ababa , Ethiopia</li>
-                    <li><a href="tel:+251930856544">+ 930856544</a></li>
-                    <li><a href="mailto:kirubelayehu@gmail.com">kirubelayehu@gmail.com</a></li>
-                    <li><a href="">Ehotel.com</a></li>
+                    <li><a href="tel:+251930856544" style="color: rgb(255,255,255,0.5)">+ 930856544</a></li>
+                    <li><a href="mailto:kirubelayehu@gmail.com" style="color: rgb(255,255,255,0.5)">kirubelayehu@gmail.com</a></li>
+                    <li><a href="" style="color: rgb(255,255,255,0.5)">Ehotel.com</a></li>
                 </ul>
             </div>
         </div>
@@ -248,39 +337,17 @@
 <div class="gototop js-top">
     <a href="#" class="js-gotop"><i class="icon-arrow-up2"></i></a>
 </div>
+    <script src="js/jquery-3.2.1.min.js"></script>
+    <script src="js/jquery-migrate-3.0.0.js"></script>
+    <script src="js/popper.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/owl.carousel.min.js"></script>
+    <script src="js/jquery.waypoints.min.js"></script>
+    <script src="js/jquery.stellar.min.js"></script>
 
+    <script src="js/jquery.magnific-popup.min.js"></script>
+    <script src="js/magnific-popup-options.js"></script>
 
-
-<<<<<<< HEAD
-=======
-
->>>>>>> c666b211eb6dc5a4fbb55a6e9ca80961c9bcf826
-<!--//royal script-->
-<script src="js/jquery-3.2.1.min.js"></script>
-<script src="js/popper.js"></script>
-<script src="js/bootstrap.min.js"></script>
-<script src="js/owl.carousel.min.js"></script>
-<script src="js/jquery.ajaxchimp.min.js"></script>
-<script src="js/mail-script.js"></script>
-<script src="js/bootstrap-datetimepicker.min.js"></script>
-<script src="js/nice-select/js/jquery.nice-select.js"></script>
-<script src="js/mail-script.js"></script>
-<script src="js/stellar.js"></script>
-<script src="js/simpleLightbox.min.js"></script>
-<script src="js/custom.js"></script>
-
-<!--//lux script-->
-<script src="js/Lux/js/jquery.min.js"></script>
-<script src="js/Lux/js/jquery.easing.1.3.js"></script>
-<script src="js/Lux/js/bootstrap.min.js"></script>
-<script src="js/Lux/js/jquery.waypoints.min.js"></script>
-<script src="js/Lux/js/jquery.flexslider-min.js"></script>
-<script src="js/owl.carousel.min.js"></script>
-<script src="js/Lux/js/jquery.magnific-popup.min.js"></script>
-<script src="js/Lux/js/magnific-popup-options.js"></script>
-<script src="js/Lux/js/bootstrap-datepicker.js"></script>
-<script src="js/Lux/js/main.js"></script>
-
-
-</body>
+    <script src="js/main.js"></script>
+  </body>
 </html>

@@ -1,8 +1,7 @@
-package com.KKHHH.eHotels.repositories;
+package com.KKHHH.eHotels.repository;
 
+import com.KKHHH.eHotels.model.Room;
 import org.springframework.data.repository.CrudRepository;
-
-import com.KKHHH.eHotels.domains.Room;
 
 public interface RoomRepository extends CrudRepository<Room,Long>{
 

@@ -1,119 +1,105 @@
-package com.KKHHH.eHotels.domains;
+package com.KKHHH.eHotels.model;
 
-<<<<<<< HEAD
+import javax.persistence.*;
+import java.util.Collection;
 
-import java.util.ArrayList;
-import java.util.List;
-
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
-import javax.persistence.OneToMany;
-=======
-import javax.persistence.Entity;
-import javax.persistence.Id;
-import javax.persistence.JoinColumn;
-import javax.persistence.ManyToOne;
-
->>>>>>> c666b211eb6dc5a4fbb55a6e9ca80961c9bcf826
-import javax.persistence.Table;
-import javax.validation.constraints.Email;
-import javax.validation.constraints.NotEmpty;
-import javax.validation.constraints.NotNull;
-import javax.validation.constraints.Size;
-
-import lombok.Data;
-<<<<<<< HEAD
-import lombok.extern.slf4j.Slf4j;
-
-@Data
 @Entity
-@Slf4j
-@Table(name="User")
-
+@Table(uniqueConstraints = @UniqueConstraint(columnNames = "email"))
 public class User {
 
-	public User() {}
-	@Id
-	@GeneratedValue(strategy=GenerationType.AUTO)
-	private Long Id;
-	
-	
-	@NotNull
-	@NotEmpty
-	@Size(min=2,message="First Name Cannot Be Empty")
-	private String firstname;
+    @Id
+    @GeneratedValue(strategy = GenerationType.AUTO)
+    private Long id;
 
-	@NotNull
-	@NotEmpty
-	@Size(min=2,message="Last Name Cannot Be Empty")
-	private String lastname;
-	
+    private String firstName;
+    private String lastName;
+    private String email;
+    private String password;
 
-	@NotNull
-	@NotEmpty
-	@Size(min=2,message="Middle Name Cannot Be Empty")
-	private String middlename;
-	
-	@NotNull
-	@NotEmpty
-	@Email(message="Invalid Format")
-=======
+    @ManyToMany(fetch = FetchType.EAGER, cascade = CascadeType.ALL)
+    @JoinTable(
+            name = "users_roles",
+            joinColumns = @JoinColumn(
+                    name = "user_id", referencedColumnName = "id"),
+            inverseJoinColumns = @JoinColumn(
+                    name = "role_id", referencedColumnName = "id"))
+    private Collection<Role> roles;
 
-@Data
-@Entity
-@Table(name="User")
-public class User {
-	
-	@Id
-	@NotNull
-	@NotEmpty
-	@Email(message="Incorrect Email")
->>>>>>> c666b211eb6dc5a4fbb55a6e9ca80961c9bcf826
-	private String email;
-	
-	@NotNull
-	@NotEmpty
-<<<<<<< HEAD
-	@Size(min=8,message="Passwrod Length Must Be 8+")
-	private String password;
-	
-	@NotNull
-	@NotEmpty
-	@Size(min=4,message="Id No Cannot Be Empty")
-	private String idno;
-	
-	
+    public User() {
+    }
 
-	@NotNull
-	@NotEmpty
-	@Size(min=4,message="City Cannot Be Empty")
-	private String city;
-	
+    public User(String firstName, String lastName, String email, String password) {
+        this.firstName = firstName;
+        this.lastName = lastName;
+        this.email = email;
+        this.password = password;
+    }
 
-	@NotNull
-	@NotEmpty
-	@Size(min=4,message="City Cannot Be Empty")
-	private String subCity;
-	
-	@NotNull
-	@NotEmpty
-	@Size(min=4,message="State Cannot Be Empty")
-	private String state;
-	
-	@NotNull
-	@NotEmpty
-	@Size(min=10,message="Acc No Cannot Be Empty")
-	private String accno;
-=======
-	@Size(min=8,message="Password is less than 8")
-	private String password;
-	
+    public User(String firstName, String lastName, String email, String password, Collection<Role> roles) {
+        this.firstName = firstName;
+        this.lastName = lastName;
+        this.email = email;
+        this.password = password;
+        this.roles = roles;
+    }
 
-	@ManyToOne
-	@JoinColumn(name="hotel",nullable=false)
-	private Hotel hotel;
->>>>>>> c666b211eb6dc5a4fbb55a6e9ca80961c9bcf826
-	
+    public Long getId() {
+        return id;
+    }
+
+    public void setId(Long id) {
+        this.id = id;
+    }
+
+    public String getFirstName() {
+        return firstName;
+    }
+
+    public void setFirstName(String firstName) {
+        this.firstName = firstName;
+    }
+
+    public String getLastName() {
+        return lastName;
+    }
+
+    public void setLastName(String lastName) {
+        this.lastName = lastName;
+    }
+
+    public String getEmail() {
+        return email;
+    }
+
+    public void setEmail(String email) {
+        this.email = email;
+    }
+
+    public String getPassword() {
+        return password;
+    }
+
+    public void setPassword(String password) {
+        this.password = password;
+    }
+
+    public Collection<Role> getRoles() {
+        return roles;
+    }
+
+    public void setRoles(Collection<Role> roles) {
+        this.roles = roles;
+    }
+
+    @Override
+    public String toString() {
+        return "Manager{" +
+                "id=" + id +
+                ", firstName='" + firstName + '\'' +
+                ", lastName='" + lastName + '\'' +
+                ", email='" + email + '\'' +
+                ", password='" + "*********" + '\'' +
+                ", roles=" + roles +
+                '}';
+    }
 }
