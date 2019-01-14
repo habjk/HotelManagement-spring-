@@ -1,46 +1,52 @@
-<!doctype html>
-<html xmlns="http://www.w3.org/1999/xhtml"
-      xmlns:th="http://www.thymeleaf.org">
-  <head>
-    <title>register a Hotel</title>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="icon" href="image/backimage1.jpg" type="image/png">
+    <title>EHotel Room Reservation</title>
+    <!-- Bootstrap CSS -->
+    <!--//Royal link-->
+    <link rel="stylesheet" href="css/bootstrap.css">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/font-awesome.min.css">
+    <link rel="stylesheet" href="css/owl.carousel.min.css">
+    <link rel="stylesheet" href="css/bootstrap-datetimepicker.min.css">
+    <link rel="stylesheet" href="css/nice-select/css/nice-select.css">
+    <link rel="stylesheet" href="css/owl.carousel.min.css">
+    <!-- main css -->
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/responsive.css">
 
-    <link href="https://fonts.googleapis.com/css?family=Playfair+Display:400,700,900|Rubik:300,400,700" rel="stylesheet">
+   <!-- //lux link-->
 
-    <link rel="stylesheet" th:href="@{/css/bootstrap.css}">
-    <link rel="stylesheet" th:href="@{css/animate.css}">
-    <link rel="stylesheet" th:href="@{css/owl.carousel.min.css}">
+    <link rel="stylesheet" href="css/Lux/css/animate.css">
+    <link rel="stylesheet" href="css/Lux/css/icomoon.css">
+    <link rel="stylesheet" href="css/Lux/css/bootstrap.css">
+    <link rel="stylesheet" href="css/Lux/css/magnific-popup.css">
+    <link rel="stylesheet" href="css/Lux/css/flexslider.css">
+    <link rel="stylesheet" href="css/Lux/css/owl.carousel.min.css">
+    <link rel="stylesheet" href="css/Lux/css/owl.theme.default.min.css">
+    <link rel="stylesheet" href="css/Lux/css/bootstrap-datepicker.css">
+    <link rel="stylesheet" href="fonts/flaticon/font/flaticon.css">
+    <link rel="stylesheet" href="css/Lux/css/style.css">
+    <script src="js/Lux/js/modernizr-2.6.2.min.js"></script>
+    <script src="js/Lux/js/respond.min.js"></script>
 
-    <link rel="stylesheet" th:href="@{fonts/ionicons/css/ionicons.min.css}">
-    <link rel="stylesheet" th:href="@{fonts/fontawesome/css/font-awesome.min.css}">
-    <link rel="stylesheet" href="@{css/magnific-popup.css}">
 
-    <!-- Theme Style -->
-    <link rel="stylesheet" th:href="@{css/style.css}">
-  </head>
-<style th:type="@{text/css}">
-    footer{
-      background: #302939;
 
+
+</head>
+<style>
+    .navigation-bar{
+        background: #CCC;
+        opacity: 0.6;
     }
-    .colorlib-footer-links{
-      color: rgb(255,255,255,0.5);
-    }
-    footer li,footer h4{
-      list-style: none;
-      color: #fff;
-    }
-    footer -colorlib-footer-links,p {
-      color: rgb(255,255,255,0.5);
+</style>
 
-    }
-
-  </style>
-  
-  <body>
-    
-    <header role="banner">
+<body>
+  <header role="banner">
      
       <nav class="navbar navbar-expand-md navbar-dark bg-light">
         <div class="container">
@@ -107,73 +113,70 @@
     </section>
     <!-- END section -->
 
+   
+
 
     <section class="site-section">
       <div class="container">
         <div class="row">
           <div class="col-md-6">
             <h2 class="mb-5">Registration Form</h2>
-            	<c:url var="logoutUrl" value="register"/>
-                <form  method="post" th:action="@{/registration}" th:object="${register}">
+                <form action="#" method="post">
                   <div class="row">
-                      <div class="col-sm-12 form-group">
+                      <div class="col-sm-6 form-group">
                           
                           <label for="">Hotel Name</label>
-                         
                           <div style="position: relative;">
        <!--                      <span class="fa fa-calendar icon" style="position: absolute; right: 15px; top: 10px;"></span> -->
-                            <input type='text' class="form-control" th:field="*{hotelName}" required minlength="4"/>
-                             <span class="text-danger" th:if="${#fields.hasErrors('hotelName')}"
-                          							th:errors="*{hotelName}">Name Error </span>
-                         
+                            <input type='text' class="form-control" id='arrival_date' />
                           </div>
                       </div>
 
-                      <div class="col-sm-12 form-group">
+                      <div class="col-sm-6 form-group">
                           
-                          <label for="">City</label>
+                          <label for="">Status</label>
                           <div style="position: relative;">
   <!--                           <span class="fa fa-calendar icon" style="position: absolute; right: 15px; top: 10px;"></span> -->
-                            <input type='text' class="form-control" th:field="*{city}" required minlength="4"/>
-                              <span class="text-danger" th:if="${#fields.hasErrors('city')}"
-                          							th:errors="*{city}">City Error </span>
-                          </div>
-                      </div>
-                      <div class="col-sm-12 form-group">
-                          
-                          <label for="">SubCity</label>
-                          <div style="position: relative;">
-  <!--                           <span class="fa fa-calendar icon" style="position: absolute; right: 15px; top: 10px;"></span> -->
-                            <input type='text' class="form-control" th:field="*{subCity}" required minlength="4"/>
-                              <span class="text-danger" th:if="${#fields.hasErrors('subCity')}"
-                          							th:errors="*{hotelName}">SubCity </span>
+                            <input type='text' class="form-control" id='departure_date' />
                           </div>
                       </div>
                       
                   </div>
-				 <h2 ></h2>
-                 <div th:object="${registerManager}">
-                  <div class="row">
-                  	<h3 class="mb-5">Hotel Managers's</h3>
-                    <div class="col-md-12 form-group">
-                      <label for="email">Email</label>
-                      <input type="email" th:field="*{email}" class="form-control " required>
-                    </div>
-                    <div class="col-md-12 form-group">
-                      <label for="password">password</label>
-                      <input type="password" th:field="*{password}" class="form-control " required minlength="8">
-                    </div>
-                  </div>
-                  
+
+
                   <div class="row">
                     <div class="col-md-6 form-group">
-                    <input type="hidden"
-    						name="${_csrf.parameterName}"
-   							value="${_csrf.token}"/>
+                      <label for="room">Number of Rooms</label>
+                      <div style="position: relative;">
+     <!--                        <span class="fa fa-calendar icon" style="position: absolute; right: 15px; top: 10px;"></span> -->
+                            <input type='Number' class="form-control" id='arrival_date' />
+                          </div>
+                    </div>
+
+                    <div class="col-md-6 form-group">
+                      <label for="room">Cost of each Room </label>
+                       <div style="position: relative;">
+<!--                             <span class="fa fa-calendar icon" style="position: absolute; right: 15px; top: 10px;"></span> -->
+                            <input type='Number' class="form-control" id='' />
+                          </div>
+                    </div>
+                  </div>
+                  <div class="row">
+                    <div class="col-md-12 form-group">
+                      <label for="email">Email</label>
+                      <input type="email" id="email" class="form-control ">
+                    </div>
+                  </div>
+                  <div class="row">
+                    <div class="col-md-12 form-group">
+                      <label for="message">Room Description</label>
+                      <textarea name="message" id="message" class="form-control " cols="30" rows="8"></textarea>
+                    </div>
+                  </div>
+                  <div class="row">
+                    <div class="col-md-6 form-group">
                       <input type="submit" value="Register Now" class="btn btn-primary">
                     </div>
-                    </div>
-                    
                   </div>
                 </form>
               </div>
@@ -270,20 +273,39 @@
 </footer>
 </div>
 
-    <!-- loader -->
-    <div id="loader" class="show fullscreen"><svg class="circular" width="48px" height="48px"><circle class="path-bg" cx="24" cy="24" r="22" fill="none" stroke-width="4" stroke="#eeeeee"/><circle class="path" cx="24" cy="24" r="22" fill="none" stroke-width="4" stroke-miterlimit="10" stroke="#f4b214"/></svg></div>
+<div class="gototop js-top">
+    <a href="#" class="js-gotop"><i class="icon-arrow-up2"></i></a>
+</div>
 
-    <script src="js/jquery-3.2.1.min.js"></script>
-    <script src="js/jquery-migrate-3.0.0.js"></script>
-    <script src="js/popper.min.js"></script>
-    <script src="js/bootstrap.min.js"></script>
-    <script src="js/owl.carousel.min.js"></script>
-    <script src="js/jquery.waypoints.min.js"></script>
-    <script src="js/jquery.stellar.min.js"></script>
 
-    <script src="js/jquery.magnific-popup.min.js"></script>
-    <script src="js/magnific-popup-options.js"></script>
 
-    <script src="js/main.js"></script>
-  </body>
+
+<!--//royal script-->
+<script src="js/jquery-3.2.1.min.js"></script>
+<script src="js/popper.js"></script>
+<script src="js/bootstrap.min.js"></script>
+<script src="js/owl.carousel.min.js"></script>
+<script src="js/jquery.ajaxchimp.min.js"></script>
+<script src="js/mail-script.js"></script>
+<script src="js/bootstrap-datetimepicker.min.js"></script>
+<script src="js/nice-select/js/jquery.nice-select.js"></script>
+<script src="js/mail-script.js"></script>
+<script src="js/stellar.js"></script>
+<script src="js/simpleLightbox.min.js"></script>
+<script src="js/custom.js"></script>
+
+<!--//lux script-->
+<script src="js/Lux/js/jquery.min.js"></script>
+<script src="js/Lux/js/jquery.easing.1.3.js"></script>
+<script src="js/Lux/js/bootstrap.min.js"></script>
+<script src="js/Lux/js/jquery.waypoints.min.js"></script>
+<script src="js/Lux/js/jquery.flexslider-min.js"></script>
+<script src="js/owl.carousel.min.js"></script>
+<script src="js/Lux/js/jquery.magnific-popup.min.js"></script>
+<script src="js/Lux/js/magnific-popup-options.js"></script>
+<script src="js/Lux/js/bootstrap-datepicker.js"></script>
+<script src="js/Lux/js/main.js"></script>
+
+
+</body>
 </html>

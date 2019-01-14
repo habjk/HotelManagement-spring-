@@ -53,7 +53,17 @@ Table of Content:
   margin: 0px;
   padding: 0px;
 }
+<<<<<<< HEAD
+.col-xs-4 , button{
+	text-decoration:underline;
+	color:rgb(0,40,214);
+	width:150px;
+	height:40px;
+	border:none;
+}
+=======
 
+>>>>>>> c666b211eb6dc5a4fbb55a6e9ca80961c9bcf826
 a {
   text-decoration: none;
   -webkit-transition: all 0.3s ease-in-out;

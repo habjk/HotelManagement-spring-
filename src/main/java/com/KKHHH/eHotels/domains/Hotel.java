@@ -1,19 +1,23 @@
-package com.KKHHH.eHotels.domains;
+package com.KKHHH.eHotels.model;
 
+<<<<<<< HEAD
 import java.beans.Transient;
 import java.util.Set;
+=======
+import lombok.Data;
+import lombok.extern.slf4j.Slf4j;
+>>>>>>> f3a00b910a8265240b584f6f18643a7916ed8868
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
-import javax.persistence.OneToMany;
-import javax.persistence.Table;
+import javax.persistence.*;
 import javax.validation.constraints.NotEmpty;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
+<<<<<<< HEAD
 
 import lombok.Data;
+=======
+import java.util.Set;
+>>>>>>> f3a00b910a8265240b584f6f18643a7916ed8868
 
 @Data
 @Entity
@@ -50,7 +54,7 @@ public class Hotel {
 	
 	
 	@OneToMany(mappedBy="hotel")
-	private Set<User> user;
+	private Set<Manager> users;
 	
 	@OneToMany(mappedBy="hotelId")
 	private Set<ImageModel> imageModel;
