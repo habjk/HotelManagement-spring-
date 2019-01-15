@@ -1,0 +1,333 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <title>contact</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <link href="https://fonts.googleapis.com/css?family=Playfair+Display:400,700,900|Rubik:300,400,700" rel="stylesheet">
+
+    <link rel="stylesheet" th:href="@{/css/bootstrap.css}">
+    <link rel="stylesheet" th:href="@{css/animate.css}">
+   <link rel="stylesheet" th:href="@{css/owl.carousel.min.css}">
+
+    <link rel="stylesheet" th:href="@{fonts/ionicons/css/ionicons.min.css}">
+    <link rel="stylesheet" th:href="@{fonts/fontawesome/css/font-awesome.min.css}">
+    <link rel="stylesheet" href="@{css/magnific-popup.css}">
+
+    <!-- Theme Style -->
+    <link rel="stylesheet" th:href="@{css/style.css}">
+    
+     <meta charset="utf-8" />
+	  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+	  <meta name="viewport" content="width=device-width, initial-scale=1" />
+	  <meta name="description" content="User account registration" />
+	  <meta name="author" content="Amir Boroumand" />
+	  <link rel="icon" href="favicon.ico" />
+	   <!-- Bootstrap core CSS -->
+	  <link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
+	  rel="stylesheet"
+	  integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u"
+	  crossorigin="anonymous" />
+	
+	  <link th:href="@{css/style.css}" rel="stylesheet" />
+  </head>
+    <style th:type="@{text/css}">
+    footer{
+      background: #302939;
+
+    }
+    .colorlib-footer-links{
+      color: rgb(255,255,255,0.5);
+    }
+    footer li,footer h4{
+      list-style: none;
+      color: #fff;
+    }
+    footer -colorlib-footer-links,p {
+      color: rgb(255,255,255,0.5);
+
+    }
+
+  </style>
+  <body>
+    
+    <header role="banner">
+     
+      <nav class="navbar navbar-expand-md navbar-dark bg-light">
+        <div class="container">
+          <a class="navbar-brand" href="index.html">Ehotel</a>
+          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExample05" aria-controls="navbarsExample05" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+
+          <div class="collapse navbar-collapse navbar-light" id="navbarsExample05">
+            <ul class="navbar-nav ml-auto pl-lg-5 pl-0">
+              <li class="nav-item">
+                <a class="nav-link" th:href="index.html">Home</a>
+              </li>
+              <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="rooms.html" id="dropdown04" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Delate</a>
+                <div class="dropdown-menu" aria-labelledby="dropdown04">
+                  <a class="dropdown-item" href="rooms.html">User</a>
+                  <a class="dropdown-item" href="rooms.html">Hotel Rooms</a>
+                  <a class="dropdown-item" href="rooms.html">Commment</a>
+                  <a class="dropdown-item" href="rooms.html">Rooms</a>
+                </div>
+
+              </li>
+            
+              <li class="nav-item">
+                <a class="nav-link " href="about.html">About</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link active" href="register.html">Register Admin</a>
+              </li>
+
+               <li class="nav-item cta">
+                <a class="nav-link" href="booknow.html"><span>Request</span></a>
+              </li>
+            </ul>
+            
+          </div>
+        </div>
+      </nav>
+    </header>
+    <!-- END header -->
+
+
+
+    <section class="site-hero site-hero-innerpage overlay" data-stellar-background-ratio="0.5" style="background-image: url(images/big_image_1.jpg);">
+      <div class="container">
+        <div class="row align-items-center site-hero-inner justify-content-center">
+          <div class="col-md-12 text-center">
+
+            <div class="mb-5 element-animate">
+             <h1>Welcome To EHotel</h1>
+              <p>Discover our world's #1 Luxury hotel.</p>
+            </div>
+
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- END section -->
+
+
+
+
+    <section class="site-section">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-6">
+            <h3 class="mb-5" th:text="Register"></h3>
+            
+            <form autocomplete="off" action="#"  th:action="@{/AdminRegister}"  th:object="${user}" method="post" class="m-t" role="form"
+               data-toggle="validator">
+               
+               <div th:if="${confirmationMessage}" class="alert alert-success"
+                         role="alert" th:text=${confirmationMessage}></div>
+
+			          <div th:if="${errorMessage}"
+			            class="alert alert-danger" role="alert"
+			            th:text="${errorMessage}"></div>
+			          
+			          
+			           <div th:if="${#fields.hasErrors('password')}"
+					          th:errors="*{password}"
+					          class="validation-message alert alert-danger" role="alert"></div>
+
+				       <!--  <div th:if="${#fields.hasErrors('lastName')}"
+				          th:errors="*{lastName}"
+				          class="validation-message alert alert-danger" role="alert"></div> -->
+
+				        <div th:if="${#fields.hasErrors('email')}" th:errors="*{email}"
+				          class="validation-message alert alert-danger" role="alert"></div>
+			           
+			           
+			          
+			           <div class="row">
+                    <div class="col-md-12 form-group">
+			           <div class="form-group input-group has-feedback">
+				          <span class="input-group-addon">
+				            <span class="glyphicon glyphicon-envelope"></span>
+				          </span>
+				          <input type="email" th:field="*{email}" id="email"  name="email"
+				            placeholder="Email Address" class="form-control"
+				            data-error="This email address is invalid" required />
+				          <span class="glyphicon form-control-feedback"
+				            aria-hidden="true"></span>
+				
+				        </div>
+				        </div>
+				        </div>
+       
+			           
+			           
+			          
+			       <div class="row">
+                    <div class="col-md-12 form-group">
+			           <div class="form-group input-group has-feedback">
+				          <label th:if="${#fields.hasErrors('password')}"
+				            th:errors="*{password}" class="validation-message"></label>
+				          <span class="input-group-addon">
+				            <span class="glyphicon glyphicon-user"></span>
+				          </span>
+				          
+				          <input type="password" th:field="*{password}"  id="password" height="25px" name="password"
+				            placeholder="password" class="form-control" required  />
+				          <span class="glyphicon form-control-feedback"
+				            aria-hidden="true"></span>
+				        </div>
+			          </div>
+			          </div>
+			          
+			          
+			          
+			          
+			                    
+                
+                
+                  <div class="row">
+                    <div class="col-md-6 form-group">
+                     
+                    </div>
+                  </div>
+                   <div class="row">
+                    <div class="col-md-6 form-group">
+                    <button type="submit" class="btn btn-lg btn-primary"  style="margin-right:10px;width: 274px">Register</button>
+                    
+                      </div>
+                  </div>
+                </form>
+                
+                
+              </div>
+              <div class="col-md-1"></div>
+              <div class="col-md-5">
+                
+                <p class="mb-5"><img src="images/img_4.jpg" alt="" class="img-fluid"></p>
+                <p>Ullam cumque eveniet, fugiat quas maiores, non modi eos deleniti minima, nesciunt assumenda sequi vitae culpa labore nulla! Cumque vero, magnam ab optio quidem debitis dignissimos nihil nesciunt vitae impedit!</p> 
+                 <div class="media-body">
+            
+                <ul class="room-specs">
+                
+                </ul>
+                </div>
+              </div>
+
+        </div>
+
+      </div>
+    </section>
+    <!-- END section -->
+
+
+   
+   
+
+    <section class="section-cover" data-stellar-background-ratio="0.5" style="background-image: url(images/img_5.jpg);">
+      <div class="container">
+        <div class="row justify-content-center align-items-center intro">
+          <div class="col-md-9 text-center element-animate">
+            <h2>Relax and Enjoy your Holiday</h2>
+            <p class="lead mb-5">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Architecto quidem tempore expedita facere facilis, dolores!</p>
+            <div class="btn-play-wrap"><a href="https://vimeo.com/channels/staffpicks/93951774" class="btn-play popup-vimeo "><span class="ion-ios-play"></span></a></div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- END section -->
+                 <section class="section-cover" data-stellar-background-ratio="0.5" style="background-image: url(images/img_5.jpg);">
+
+                </section>
+
+<footer id="colorlib-footer" role="contentinfo" style="width: 100%">
+    <div class="container" style="width: 100%">
+        <div class="row row-pb-md" style="width: 100%">
+            <div class="col-md-3 colorlib-widget">
+                <h4>EHotel Reservation</h4>
+                <p>Facilis ipsum reprehenderit nemo molestias. Aut cum mollitia reprehenderit. Eos cumque dicta adipisci architecto culpa amet.</p>
+                <p>
+                <ul class="colorlib-social-icons">
+                    <li><a href="#"><i class="icon-twitter"></i></a></li>
+                    <li><a href="#"><i class="icon-facebook"></i></a></li>
+                    <li><a href="#"><i class="icon-linkedin"></i></a></li>
+                    <li><a href="#"><i class="icon-dribbble"></i></a></li>
+                </ul>
+                </p>
+            </div>
+            <div class="col-md-3 colorlib-widget">
+                <h4>Quick Links</h4>
+                <p>
+                <ul class="colorlib-footer-links">
+                    <li><a href="#" style="color: rgb(255,255,255,0.5)">Home</a></li>
+                    <li><a href="#" style="color: rgb(255,255,255,0.5)">Hotels</a></li>
+                    <li><a href="pages/Rooms.html" style="color: rgb(255,255,255,0.5)">Rooms</a></li>
+                    <li><a href="#" style="color: rgb(255,255,255,0.5)">Contact Us</a></li>
+                </ul>
+                </p>
+            </div>
+            <div class="col-md-3">
+                <h4>Recents Blog Post</h4>
+                <ul class="colorlib-footer-links">
+                    <li><a href="#" style="color: rgb(255,255,255,0.5)">The Ultimate Packing List For Female Travelers</a></li>
+                    <li><a href="#" style="color: rgb(255,255,255,0.5)">How These 5 People Found The Path to Their Dream Trip</a></li>
+                    <li><a href="#" style="color: rgb(255,255,255,0.5)">A Definitive Guide to the Best Dining and Drinking Venues in the City</a></li>
+                </ul>
+            </div>
+
+            <div class="col-md-3 col-md-push-1">
+                <h4>Contact Information</h4>
+                <ul class="colorlib-footer-links">
+                    <li>6 Kilo , <br> Addis Ababa , Ethiopia</li>
+                    <li><a href="tel:+251930856544" style="color: rgb(255,255,255,0.5)">+ 930856544</a></li>
+                    <li><a href="mailto:kirubelayehu@gmail.com" style="color: rgb(255,255,255,0.5)">kirubelayehu@gmail.com</a></li>
+                    <li><a href="" style="color: rgb(255,255,255,0.5)">Ehotel.com</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-12 text-center">
+                <p>
+                    <small class="block"><!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+                        Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved |<a href="Index.html" target="_blank">EHotel</a>
+                        <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. --></small>
+
+                </p>
+            </div>
+        </div>
+    </div>
+</footer>
+</div>
+    <!-- loader -->
+    <div id="loader" class="show fullscreen"><svg class="circular" width="48px" height="48px"><circle class="path-bg" cx="24" cy="24" r="22" fill="none" stroke-width="4" stroke="#eeeeee"/><circle class="path" cx="24" cy="24" r="22" fill="none" stroke-width="4" stroke-miterlimit="10" stroke="#f4b214"/></svg></div>
+
+    <script src="js/jquery-3.2.1.min.js"></script>
+    <script src="js/jquery-migrate-3.0.0.js"></script>
+    <script src="js/popper.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/owl.carousel.min.js"></script>
+    <script src="js/jquery.waypoints.min.js"></script>
+    <script src="js/jquery.stellar.min.js"></script>
+
+    <script src="js/jquery.magnific-popup.min.js"></script>
+    <script src="js/magnific-popup-options.js"></script>
+
+    <script src="js/main.js"></script>
+    
+    <!-- jQuery-->
+  <script src="//ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    
+  <!-- Bootstrap -->
+  <script
+    src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"
+    integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa"
+    crossorigin="anonymous"></script>
+
+  <!-- Bootstrap Validator plugin -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/1000hz-bootstrap-validator/0.11.9/validator.min.js"></script>
+    
+    
+  </body>
+</html>
