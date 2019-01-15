@@ -1,7 +1,5 @@
 package com.KKHHH.eHotels.domains;
 
-import java.beans.Transient;
-
 import javax.persistence.*;
 
 import lombok.Data;

@@ -1,6 +1,5 @@
 package com.KKHHH.eHotels.controllers;
 
-import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -14,6 +13,7 @@ import com.KKHHH.eHotels.repositories.HotelRepository;
 import com.KKHHH.eHotels.repositories.ImageRepository;
 
 import lombok.extern.slf4j.Slf4j;
+
 @Slf4j
 @Controller
 @RequestMapping("/hotelProfile")

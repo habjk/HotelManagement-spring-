@@ -10,15 +10,10 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
-import com.KKHHH.eHotels.domains.Hotel;
+
 import com.KKHHH.eHotels.domains.ReserveRoom;
-import com.KKHHH.eHotels.repositories.HotelRepository;
 import com.KKHHH.eHotels.repositories.ReserveRoomRepository;
-import com.KKHHH.eHotels.repositories.UserRepository;
 
-import lombok.extern.slf4j.Slf4j;
-
-@Slf4j
 @Controller
 @RequestMapping("/register/booknow")
 public class ReserveRoomController {
@@ -51,7 +46,7 @@ public class ReserveRoomController {
 			return "booknow";
 		}
 		
-		ReserveRoom reserveRoom=reserveRoomRepository.save(room);
+		reserveRoomRepository.save(room);
 		
 		
 		return "redirect:/";

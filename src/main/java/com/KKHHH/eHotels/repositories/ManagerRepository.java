@@ -1,7 +1,9 @@
-package com.KKHHH.eHotels.repository;
+package com.KKHHH.eHotels.repositories;
 
-import com.KKHHH.eHotels.model.Manager;
+
 import org.springframework.data.repository.CrudRepository;
+
+import com.KKHHH.eHotels.domains.Manager;
 
 public interface ManagerRepository extends CrudRepository<Manager,String>{
 

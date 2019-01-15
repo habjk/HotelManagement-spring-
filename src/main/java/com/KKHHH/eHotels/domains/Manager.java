@@ -1,4 +1,4 @@
-package com.KKHHH.eHotels.model;
+package com.KKHHH.eHotels.domains;
 
 import lombok.Data;
 

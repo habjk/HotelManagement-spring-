@@ -1,8 +1,9 @@
-package com.KKHHH.eHotels.service;
+package com.KKHHH.eHotels.services;
 
-import com.KKHHH.eHotels.model.User;
+
 import org.springframework.security.core.userdetails.UserDetailsService;
-//import net.javaguides.springboot.springsecurity.web.dto.UserRegistrationDto;
+
+import com.KKHHH.eHotels.domains.User;
 
 public interface UserService extends UserDetailsService {
 

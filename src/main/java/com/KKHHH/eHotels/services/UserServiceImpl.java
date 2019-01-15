@@ -1,31 +1,28 @@
-package com.KKHHH.eHotels.service;
+package com.KKHHH.eHotels.services;
 
+import java.util.Collection;
+import java.util.stream.Collectors;
 
-
-import com.KKHHH.eHotels.model.Role;
-import com.KKHHH.eHotels.model.User;
-import com.KKHHH.eHotels.repository.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;
-
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Service;
 
-import java.util.Collection;
-import java.util.stream.Collectors;
-//import net.javaguides.springboot.springsecurity.web.dto.UserRegistrationDto;
+import com.KKHHH.eHotels.domains.Role;
+import com.KKHHH.eHotels.domains.User;
+import com.KKHHH.eHotels.repositories.UserRepository;
 
 @Service
 public class UserServiceImpl implements UserService {
 
-    @Autowired
-    private UserRepository userRepository;
+   @Autowired
+   private UserRepository userRepository;
 
-    @Autowired
-    private BCryptPasswordEncoder passwordEncoder;
+   @Autowired
+   private BCryptPasswordEncoder passwordEncoder;
 
    public User findByEmail(String email) {
        return userRepository.findByEmail(email);
