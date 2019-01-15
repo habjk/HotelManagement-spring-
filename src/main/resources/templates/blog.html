@@ -1,6 +1,5 @@
 <!doctype html>
-<html xmlns="http://www.w3.org/1999/xhtml"
-      xmlns:th="http://www.thymeleaf.org">
+<html lang="en">
   <head>
     <title>register a Hotel</title>
     <meta charset="utf-8">
@@ -8,18 +7,18 @@
 
     <link href="https://fonts.googleapis.com/css?family=Playfair+Display:400,700,900|Rubik:300,400,700" rel="stylesheet">
 
-    <link rel="stylesheet" th:href="@{/css/bootstrap.css}">
-    <link rel="stylesheet" th:href="@{css/animate.css}">
-    <link rel="stylesheet" th:href="@{css/owl.carousel.min.css}">
+    <link rel="stylesheet" href="css/bootstrap.css">
+    <link rel="stylesheet" href="css/animate.css">
+    <link rel="stylesheet" href="css/owl.carousel.min.css">
 
-    <link rel="stylesheet" th:href="@{fonts/ionicons/css/ionicons.min.css}">
-    <link rel="stylesheet" th:href="@{fonts/fontawesome/css/font-awesome.min.css}">
-    <link rel="stylesheet" href="@{css/magnific-popup.css}">
+    <link rel="stylesheet" href="fonts/ionicons/css/ionicons.min.css">
+    <link rel="stylesheet" href="fonts/fontawesome/css/font-awesome.min.css">
+    <link rel="stylesheet" href="css/magnific-popup.css">
 
     <!-- Theme Style -->
-    <link rel="stylesheet" th:href="@{css/style.css}">
+    <link rel="stylesheet" href="css/style.css">
   </head>
-<style th:type="@{text/css}">
+<style type="text/css">
     footer{
       background: #302939;
 
@@ -75,11 +74,7 @@
               </li>
 
                <li class="nav-item cta">
-<<<<<<< HEAD
-                <a class="nav-link" href="/register/booknow"><span>Reserve Rooms</span></a>
-=======
                 <a class="nav-link" href="booknow.html"><span>Reserve Rooms</span></a>
->>>>>>> bbf28b4ac41bc566c82baba6ac4108fee1136e42
               </li>
             </ul>
             
@@ -111,109 +106,70 @@
     </section>
     <!-- END section -->
 
-<<<<<<< HEAD
    
 
-=======
->>>>>>> bbf28b4ac41bc566c82baba6ac4108fee1136e42
 
     <section class="site-section">
       <div class="container">
         <div class="row">
           <div class="col-md-6">
             <h2 class="mb-5">Registration Form</h2>
-            	<c:url var="logoutUrl" value="register"/>
-<<<<<<< HEAD
-                <form  method="post" th:object="${register}">
-=======
-                <form  method="post" th:action="@{/registration}" th:object="${register}">
->>>>>>> bbf28b4ac41bc566c82baba6ac4108fee1136e42
+                <form action="#" method="post">
                   <div class="row">
-                      <div class="col-sm-12 form-group">
+                      <div class="col-sm-6 form-group">
                           
                           <label for="">Hotel Name</label>
-                         
                           <div style="position: relative;">
        <!--                      <span class="fa fa-calendar icon" style="position: absolute; right: 15px; top: 10px;"></span> -->
-<<<<<<< HEAD
-                            <input type='text' class="form-control" th:field="*{hotelName}"/>
-=======
-                            <input type='text' class="form-control" th:field="*{hotelName}" required minlength="4"/>
->>>>>>> bbf28b4ac41bc566c82baba6ac4108fee1136e42
-                             <span class="text-danger" th:if="${#fields.hasErrors('hotelName')}"
-                          							th:errors="*{hotelName}">Name Error </span>
-                         
+                            <input type='text' class="form-control" id='arrival_date' />
                           </div>
                       </div>
 
-                      <div class="col-sm-12 form-group">
+                      <div class="col-sm-6 form-group">
                           
-                          <label for="">City</label>
+                          <label for="">Status</label>
                           <div style="position: relative;">
   <!--                           <span class="fa fa-calendar icon" style="position: absolute; right: 15px; top: 10px;"></span> -->
-<<<<<<< HEAD
-                            <input type='text' class="form-control" th:field="*{city}" />
-=======
-                            <input type='text' class="form-control" th:field="*{city}" required minlength="4"/>
->>>>>>> bbf28b4ac41bc566c82baba6ac4108fee1136e42
-                              <span class="text-danger" th:if="${#fields.hasErrors('city')}"
-                          							th:errors="*{city}">City Error </span>
-                          </div>
-                      </div>
-                      <div class="col-sm-12 form-group">
-                          
-                          <label for="">SubCity</label>
-                          <div style="position: relative;">
-  <!--                           <span class="fa fa-calendar icon" style="position: absolute; right: 15px; top: 10px;"></span> -->
-<<<<<<< HEAD
-                            <input type='text' class="form-control" th:field="*{subCity}" />
-=======
-                            <input type='text' class="form-control" th:field="*{subCity}" required minlength="4"/>
->>>>>>> bbf28b4ac41bc566c82baba6ac4108fee1136e42
-                              <span class="text-danger" th:if="${#fields.hasErrors('subCity')}"
-                          							th:errors="*{hotelName}">SubCity </span>
+                            <input type='text' class="form-control" id='departure_date' />
                           </div>
                       </div>
                       
                   </div>
-				 <h2 ></h2>
-<<<<<<< HEAD
-                  
-=======
-                 <div th:object="${registerManager}">
->>>>>>> bbf28b4ac41bc566c82baba6ac4108fee1136e42
-                  <div class="row">
-                  	<h3 class="mb-5">Hotel Managers's</h3>
-                    <div class="col-md-12 form-group">
-                      <label for="email">Email</label>
-<<<<<<< HEAD
-                      <input type="email" id="email" class="form-control ">
-                    </div>
-                    <div class="col-md-12 form-group">
-                      <label for="password">password</label>
-                      <input type="password" id="email" class="form-control ">
-=======
-                      <input type="email" th:field="*{email}" class="form-control " required>
-                    </div>
-                    <div class="col-md-12 form-group">
-                      <label for="password">password</label>
-                      <input type="password" th:field="*{password}" class="form-control " required minlength="8">
->>>>>>> bbf28b4ac41bc566c82baba6ac4108fee1136e42
-                    </div>
-                  </div>
-                  
+
+
                   <div class="row">
                     <div class="col-md-6 form-group">
-                    <input type="hidden"
-    						name="${_csrf.parameterName}"
-   							value="${_csrf.token}"/>
+                      <label for="room">Number of Rooms</label>
+                      <div style="position: relative;">
+     <!--                        <span class="fa fa-calendar icon" style="position: absolute; right: 15px; top: 10px;"></span> -->
+                            <input type='Number' class="form-control" id='arrival_date' />
+                          </div>
+                    </div>
+
+                    <div class="col-md-6 form-group">
+                      <label for="room">Cost of each Room </label>
+                       <div style="position: relative;">
+<!--                             <span class="fa fa-calendar icon" style="position: absolute; right: 15px; top: 10px;"></span> -->
+                            <input type='Number' class="form-control" id='' />
+                          </div>
+                    </div>
+                  </div>
+                  <div class="row">
+                    <div class="col-md-12 form-group">
+                      <label for="email">Email</label>
+                      <input type="email" id="email" class="form-control ">
+                    </div>
+                  </div>
+                  <div class="row">
+                    <div class="col-md-12 form-group">
+                      <label for="message">Room Description</label>
+                      <textarea name="message" id="message" class="form-control " cols="30" rows="8"></textarea>
+                    </div>
+                  </div>
+                  <div class="row">
+                    <div class="col-md-6 form-group">
                       <input type="submit" value="Register Now" class="btn btn-primary">
                     </div>
-<<<<<<< HEAD
-=======
-                    </div>
-                    
->>>>>>> bbf28b4ac41bc566c82baba6ac4108fee1136e42
                   </div>
                 </form>
               </div>

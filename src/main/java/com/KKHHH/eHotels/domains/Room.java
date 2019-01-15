@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 package com.KKHHH.eHotels.domains;
 
 import javax.persistence.Entity;
@@ -10,6 +11,16 @@ import javax.validation.constraints.Size;
 
 import lombok.Data;
 
+=======
+package com.KKHHH.eHotels.model;
+
+import lombok.Data;
+
+import javax.persistence.*;
+import javax.validation.constraints.NotNull;
+import javax.validation.constraints.Size;
+
+>>>>>>> bbf28b4ac41bc566c82baba6ac4108fee1136e42
 @Data
 @Entity
 

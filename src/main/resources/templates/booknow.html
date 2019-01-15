@@ -1,25 +1,25 @@
 <!doctype html>
-<html xmlns="http://www.w3.org/1999/xhtml"
-      xmlns:th="http://www.thymeleaf.org">
+<html lang="en">
   <head>
-    <title>register a Hotel</title>
+    <title>EthioHotel a Hotel Template</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
     <link href="https://fonts.googleapis.com/css?family=Playfair+Display:400,700,900|Rubik:300,400,700" rel="stylesheet">
 
-    <link rel="stylesheet" th:href="@{/css/bootstrap.css}">
-    <link rel="stylesheet" th:href="@{css/animate.css}">
-    <link rel="stylesheet" th:href="@{css/owl.carousel.min.css}">
+    <link rel="stylesheet" href="css/bootstrap.css">
+    <link rel="stylesheet" href="css/animate.css">
+    <link rel="stylesheet" href="css/owl.carousel.min.css">
 
-    <link rel="stylesheet" th:href="@{fonts/ionicons/css/ionicons.min.css}">
-    <link rel="stylesheet" th:href="@{fonts/fontawesome/css/font-awesome.min.css}">
-    <link rel="stylesheet" href="@{css/magnific-popup.css}">
+    <link rel="stylesheet" href="fonts/ionicons/css/ionicons.min.css">
+    <link rel="stylesheet" href="fonts/fontawesome/css/font-awesome.min.css">
+    <link rel="stylesheet" href="css/magnific-popup.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.8.0/css/bootstrap-datepicker.min.css">
 
     <!-- Theme Style -->
-    <link rel="stylesheet" th:href="@{css/style.css}">
+    <link rel="stylesheet" href="css/style.css">
   </head>
-<style th:type="@{text/css}">
+  <style type="text/css">
     footer{
       background: #302939;
 
@@ -37,14 +37,13 @@
     }
 
   </style>
-  
   <body>
     
     <header role="banner">
      
       <nav class="navbar navbar-expand-md navbar-dark bg-light">
         <div class="container">
-          <a class="navbar-brand" href="index.html">EHotel</a>
+          <a class="navbar-brand" href="index.html">ETHIOHotel</a>
           <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExample05" aria-controls="navbarsExample05" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
           </button>
@@ -55,31 +54,27 @@
                 <a class="nav-link" href="index.html">Home</a>
               </li>
               <li class="nav-item dropdown">
-                <a class="nav-link dropdown-toggle" href="rooms.html" id="dropdown04" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Rooms</a>
+                <a class="nav-link dropdown-toggle" href="rooms.html" id="dropdown04" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Delete</a>
                 <div class="dropdown-menu" aria-labelledby="dropdown04">
                   <a class="dropdown-item" href="rooms.html">User</a>
-                  <a class="dropdown-item" href="rooms.html">Hotel</a>
-                  <a class="dropdown-item" href="rooms.html">Commen</a>
+                  <a class="dropdown-item" href="rooms.html">Hotel Room</a>
+                  <a class="dropdown-item" href="rooms.html">Comme</a>
                   <a class="dropdown-item" href="rooms.html">Rooms</a>
                 </div>
 
               </li>
               <li class="nav-item">
-                <a class="nav-link active" href="blog.html">Register Hotel</a>
+                <a class="nav-link" href="blog.html">Register Hotel</a>
               </li>
               <li class="nav-item">
                 <a class="nav-link " href="about.html">About</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="contact.html">Contact</a>
+                <a class="nav-link active" href="contact.html">Contact</a>
               </li>
 
                <li class="nav-item cta">
-<<<<<<< HEAD
-                <a class="nav-link" href="/register/booknow"><span>Reserve Rooms</span></a>
-=======
                 <a class="nav-link" href="booknow.html"><span>Reserve Rooms</span></a>
->>>>>>> bbf28b4ac41bc566c82baba6ac4108fee1136e42
               </li>
             </ul>
             
@@ -89,20 +84,14 @@
     </header>
     <!-- END header -->
 
-
-
-
-
-
-
     <section class="site-hero site-hero-innerpage overlay" data-stellar-background-ratio="0.5" style="background-image: url(images/big_image_1.jpg);">
       <div class="container">
         <div class="row align-items-center site-hero-inner justify-content-center">
           <div class="col-md-12 text-center">
 
             <div class="mb-5 element-animate">
-              <h1>Hotel Registration &amp; </h1>
-              <p>WelCome to Register your hotels</p>
+              <h1> Hotel Reservation</h1>
+              <p>Discover our world's #1 Luxury Room For VIP.</p>
             </div>
 
           </div>
@@ -111,109 +100,167 @@
     </section>
     <!-- END section -->
 
-<<<<<<< HEAD
-   
-
-=======
->>>>>>> bbf28b4ac41bc566c82baba6ac4108fee1136e42
-
     <section class="site-section">
       <div class="container">
         <div class="row">
           <div class="col-md-6">
-            <h2 class="mb-5">Registration Form</h2>
-            	<c:url var="logoutUrl" value="register"/>
+            <h2 class="mb-5">Reservation Form</h2>
 <<<<<<< HEAD
-                <form  method="post" th:object="${register}">
+            
+                <form method="post" th:object="${reserve}" th:action="@{/register/booknow}" >
+
+
+                       <!--  <h2>Search hotel to Reserve</h2> -->                    
+                      
 =======
-                <form  method="post" th:action="@{/registration}" th:object="${register}">
+                <form action="#" method="post">
+
+
+                       <!--  <h2>Search hotel to Reserve</h2> -->                    
+                      <form class="example" action="/action_page.php">
+                      <input type="text" placeholder="Enter Hotel.." name="search" style="width: 500px;">
+                      <button type="submit"><i class="fa fa-search"></i></button>
+                      </form>
 >>>>>>> bbf28b4ac41bc566c82baba6ac4108fee1136e42
+                      <br>
+                      <br>
+
                   <div class="row">
-                      <div class="col-sm-12 form-group">
+                      <div class="col-sm-6 form-group">
                           
-                          <label for="">Hotel Name</label>
-                         
+                          <label for="">Arrival Date</label>
                           <div style="position: relative;">
-       <!--                      <span class="fa fa-calendar icon" style="position: absolute; right: 15px; top: 10px;"></span> -->
+                            <span class="fa fa-calendar icon" style="position: absolute; right: 10px; top: 10px;"></span>
 <<<<<<< HEAD
-                            <input type='text' class="form-control" th:field="*{hotelName}"/>
-=======
-                            <input type='text' class="form-control" th:field="*{hotelName}" required minlength="4"/>
->>>>>>> bbf28b4ac41bc566c82baba6ac4108fee1136e42
-                             <span class="text-danger" th:if="${#fields.hasErrors('hotelName')}"
-                          							th:errors="*{hotelName}">Name Error </span>
+                            <input type='text' class="form-control" th:field="*{arrivaldate}" id='arrival_date' />
+                          	
+                          	<span class="text-danger" th:if="${#fields.hasErrors('arrivaldate')}"
+                          							th:errors="*{arrivaldate}">Arrival date Error </span>
                          
+                          
+=======
+                            <input type='text' class="form-control" id='arrival_date' />
+>>>>>>> bbf28b4ac41bc566c82baba6ac4108fee1136e42
                           </div>
                       </div>
 
-                      <div class="col-sm-12 form-group">
+                      <div class="col-sm-6 form-group">
                           
-                          <label for="">City</label>
+                          <label for="">Departure Date</label>
                           <div style="position: relative;">
-  <!--                           <span class="fa fa-calendar icon" style="position: absolute; right: 15px; top: 10px;"></span> -->
+                            <span class="fa fa-calendar icon" style="position: absolute; right: 10px; top: 10px;"></span>
 <<<<<<< HEAD
-                            <input type='text' class="form-control" th:field="*{city}" />
-=======
-                            <input type='text' class="form-control" th:field="*{city}" required minlength="4"/>
->>>>>>> bbf28b4ac41bc566c82baba6ac4108fee1136e42
-                              <span class="text-danger" th:if="${#fields.hasErrors('city')}"
-                          							th:errors="*{city}">City Error </span>
-                          </div>
-                      </div>
-                      <div class="col-sm-12 form-group">
+                            <input type='text' th:field="*{departuredate}" class="form-control"  id='departure_date' />
+                          	<span class="text-danger" th:if="${#fields.hasErrors('departuredate')}"
+                          							th:errors="*{departuredate}">Departure date Error </span>
                           
-                          <label for="">SubCity</label>
-                          <div style="position: relative;">
-  <!--                           <span class="fa fa-calendar icon" style="position: absolute; right: 15px; top: 10px;"></span> -->
-<<<<<<< HEAD
-                            <input type='text' class="form-control" th:field="*{subCity}" />
 =======
-                            <input type='text' class="form-control" th:field="*{subCity}" required minlength="4"/>
+                            <input type='text' class="form-control" id='departure_date' />
 >>>>>>> bbf28b4ac41bc566c82baba6ac4108fee1136e42
-                              <span class="text-danger" th:if="${#fields.hasErrors('subCity')}"
-                          							th:errors="*{hotelName}">SubCity </span>
                           </div>
                       </div>
                       
                   </div>
-				 <h2 ></h2>
-<<<<<<< HEAD
-                  
-=======
-                 <div th:object="${registerManager}">
->>>>>>> bbf28b4ac41bc566c82baba6ac4108fee1136e42
+
+
                   <div class="row">
-                  	<h3 class="mb-5">Hotel Managers's</h3>
-                    <div class="col-md-12 form-group">
-                      <label for="email">Email</label>
 <<<<<<< HEAD
-                      <input type="email" id="email" class="form-control ">
+                    <div class="col-md-4 form-group">
+                      <label for="room">Room</label>
+                      <select name="" id="room" th:field="*{room}" class="form-control">
+                        <option th:value="'1 Room'">1 Room</option>
+                        <option th:value="'2 Room'">2 Rooms</option>
+                        <option th:value="'3 Room'">3 Rooms</option>
+                        <option th:value="'4 Room'">4 Rooms</option>
+                        <option th:value="'5 Room'">5 Rooms</option>
+                      </select>
+                      
+                      <span class="text-danger" th:if="${#fields.hasErrors('room')}"
+                          							th:errors="*{room}">Room Error </span>
+                      
                     </div>
-                    <div class="col-md-12 form-group">
-                      <label for="password">password</label>
-                      <input type="password" id="email" class="form-control ">
+                    
+                    
+                    <div class="col-md-4 form-group">
+                      <label for="bedtype">Bed type</label>
+                      <select name="" id="bedtype" th:field="*{bedtype}" class="form-control">
+                        <option th:value="'Single'">Single</option>
+                        <option th:value="'Double'">Double</option>
+                        <option th:value="'King'">King</option>
+                        <option th:value="'queen'">queen</option>
+                        <option th:value="'Family'">Family</option>
+                      </select>
+                      
+                      <span class="text-danger" th:if="${#fields.hasErrors('bedtype')}"
+                          							th:errors="*{bedtype}">Bed type Error </span>
+                      
+                    </div>
+
+                    <div class="col-md-4 form-group">
+                      <label for="room">Guests</label>
+                      <select name="" id="room" th:field="*{guests}" class="form-control">
+                        <option th:value="'1 Guest'">1 Guest</option>
+                        <option th:value="'2 Guest'">2 Guests</option>
+                        <option th:value="'3 Guest'">3 Guests</option>
+                        <option th:value="'4 Guest'">4 Guests</option>
+                        <option th:value="'5 Guest'">5+ Guests</option>
+                      </select>
+                      
+                      <span class="text-danger" th:if="${#fields.hasErrors('guests')}"
+                          							th:errors="*{guests}">Guests Error </span>
 =======
-                      <input type="email" th:field="*{email}" class="form-control " required>
+                    <div class="col-md-6 form-group">
+                      <label for="room">Room</label>
+                      <select name="" id="room" class="form-control">
+                        <option value="">1 Room</option>
+                        <option value="">2 Rooms</option>
+                        <option value="">3 Rooms</option>
+                        <option value="">4 Rooms</option>
+                        <option value="">5 Rooms</option>
+                      </select>
                     </div>
-                    <div class="col-md-12 form-group">
-                      <label for="password">password</label>
-                      <input type="password" th:field="*{password}" class="form-control " required minlength="8">
+
+                    <div class="col-md-6 form-group">
+                      <label for="room">Guests</label>
+                      <select name="" id="room" class="form-control">
+                        <option value="">1 Guest</option>
+                        <option value="">2 Guests</option>
+                        <option value="">3 Guests</option>
+                        <option value="">4 Guests</option>
+                        <option value="">5+ Guests</option>
+                      </select>
 >>>>>>> bbf28b4ac41bc566c82baba6ac4108fee1136e42
                     </div>
                   </div>
-                  
+                  <div class="row">
+                    <div class="col-md-12 form-group">
+                      <label for="email">Email</label>
+<<<<<<< HEAD
+                      <input type="email" th:field="*{email}" id="email" class="form-control ">
+                      
+                      <span class="text-danger" th:if="${#fields.hasErrors('email')}"
+                          							th:errors="*{email}">Email Error </span>
+  							
+                          						
+=======
+                      <input type="email" id="email" class="form-control ">
+>>>>>>> bbf28b4ac41bc566c82baba6ac4108fee1136e42
+                    </div>
+                  </div>
+                  <div class="row">
+                    <div class="col-md-12 form-group">
+                      <label for="message">Write a Note</label>
+<<<<<<< HEAD
+                      <textarea name="message" id="message" th:field="*{note}" class="form-control " cols="30" rows="8"></textarea>
+=======
+                      <textarea name="message" id="message" class="form-control " cols="30" rows="8"></textarea>
+>>>>>>> bbf28b4ac41bc566c82baba6ac4108fee1136e42
+                    </div>
+                  </div>
                   <div class="row">
                     <div class="col-md-6 form-group">
-                    <input type="hidden"
-    						name="${_csrf.parameterName}"
-   							value="${_csrf.token}"/>
-                      <input type="submit" value="Register Now" class="btn btn-primary">
+                      <input type="submit" value="Reserve Now" class="btn btn-primary">
                     </div>
-<<<<<<< HEAD
-=======
-                    </div>
-                    
->>>>>>> bbf28b4ac41bc566c82baba6ac4108fee1136e42
                   </div>
                 </form>
               </div>
@@ -238,9 +285,8 @@
                   <li><span class="ion-ios-people-outline"></span> 2 Guests</li>
                   <li><span class="ion-ios-crop"></span> 22 ft <sup>2</sup></li>
                 </ul>
-                <p>
-                xx </p>
-                <p><a href="#" class="btn btn-primary btn-sm">Register Now From $20</a></p>
+                <p>Nulla vel metus scelerisque ante sollicitudin. Fusce condimentum nunc ac nisi vulputate fringilla. </p>
+                <p><a href="#" class="btn btn-primary btn-sm">Book Now From $20</a></p>
               </div>
             </div>
               </div>
@@ -251,7 +297,22 @@
 
 
    
-    <footer id="colorlib-footer" role="contentinfo">
+   
+
+    <section class="section-cover" data-stellar-background-ratio="0.5" style="background-image: url(images/img_5.jpg);">
+      <div class="container">
+        <div class="row justify-content-center align-items-center intro">
+          <div class="col-md-9 text-center element-animate">
+            <h2>Relax and Enjoy your Holiday</h2>
+            <p class="lead mb-5">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Architecto quidem tempore expedita facere facilis, dolores!</p>
+            <div class="btn-play-wrap"><a href="https://vimeo.com/channels/staffpicks/93951774" class="btn-play popup-vimeo "><span class="ion-ios-play"></span></a></div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- END section -->
+   
+   <footer id="colorlib-footer" role="contentinfo">
     <div class="container">
         <div class="row row-pb-md">
             <div class="col-md-3 colorlib-widget">
@@ -310,6 +371,11 @@
 </footer>
 </div>
 
+
+
+
+
+
     <!-- loader -->
     <div id="loader" class="show fullscreen"><svg class="circular" width="48px" height="48px"><circle class="path-bg" cx="24" cy="24" r="22" fill="none" stroke-width="4" stroke="#eeeeee"/><circle class="path" cx="24" cy="24" r="22" fill="none" stroke-width="4" stroke-miterlimit="10" stroke="#f4b214"/></svg></div>
 
@@ -323,6 +389,15 @@
 
     <script src="js/jquery.magnific-popup.min.js"></script>
     <script src="js/magnific-popup-options.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.8.0/js/bootstrap-datepicker.min.js"></script>
+
+    <script>
+      
+      $('#arrival_date, #departure_date').datepicker({});
+
+    </script>
+
+    
 
     <script src="js/main.js"></script>
   </body>
