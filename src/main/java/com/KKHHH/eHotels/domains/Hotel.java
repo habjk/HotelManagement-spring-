@@ -1,7 +1,6 @@
 package com.KKHHH.eHotels.domains;
 
-import java.util.ArrayList;
-import java.util.List;
+import java.beans.Transient;
 import java.util.Set;
 
 import javax.persistence.Entity;
@@ -15,11 +14,9 @@ import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
 
 import lombok.Data;
-import lombok.extern.slf4j.Slf4j;
 
 @Data
 @Entity
-@Slf4j
 @Table(name="Hotel")
 public class Hotel {
 	public Hotel() {}
@@ -44,6 +41,9 @@ public class Hotel {
 	@Size(min=4,message="City Cannot Be Empty")
 	private String subCity;
 	
+
+	
+	private String phone;
 	private short star;
 	private String moto;
 	private String description;
@@ -52,6 +52,7 @@ public class Hotel {
 	@OneToMany(mappedBy="hotel")
 	private Set<User> user;
 	
-	
+	@OneToMany(mappedBy="hotelId")
+	private Set<ImageModel> imageModel;
 	
 }

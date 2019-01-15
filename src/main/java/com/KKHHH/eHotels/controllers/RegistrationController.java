@@ -1,8 +1,6 @@
 package com.KKHHH.eHotels.controllers;
 
 import javax.validation.Valid;
-import javax.websocket.Session;
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -11,10 +9,6 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.SessionAttributes;
-import org.springframework.web.bind.support.SessionStatus;
-import org.springframework.web.context.request.WebRequest;
 
 import com.KKHHH.eHotels.domains.Hotel;
 import com.KKHHH.eHotels.domains.User;
@@ -51,6 +45,7 @@ public class RegistrationController {
 	public User registerManager(Model model) {
 		return new User();
 	}
+	
 	
 	@PostMapping
 	public String processRegisterHotel(@Valid Hotel hotel,@Valid User manager,Errors errors){
