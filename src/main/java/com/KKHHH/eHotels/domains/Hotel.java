@@ -60,17 +60,10 @@ public class Hotel {
 		this.rooms.add(room);
 	}
 	
-	@OneToMany(targetEntity=User.class)
-	private List<User> receptions=new ArrayList<>();
-	
-
-	public void addReception(User reception) {
-		this.receptions.add(reception);
-	}
-
-	
 	@OneToMany(mappedBy="hotel")
-	private Set<Manager> users;
+	private Set<User> user;
+
+	
 	
 
 	@OneToMany(mappedBy="hotelId")

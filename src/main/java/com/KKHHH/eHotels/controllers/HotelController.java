@@ -1,6 +1,8 @@
 package com.KKHHH.eHotels.controllers;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.core.annotation.AuthenticationPrincipal;
+import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -28,10 +30,9 @@ public class HotelController {
 	}
 
 	@ModelAttribute(name="profile")
-	public Hotel profileHotel(Model model) {
-		Hotel hotel=hotelRepository.findById((long) 1);
-		//Hotel hotel=new Hotel();
-		log.info("asdfghj");
+	public Hotel profileHotel(@AuthenticationPrincipal UserDetails userDetails,Model model) {
+		Hotel hotel=hotelRepository.findById((long)1);//yet to be made specfic for every Manager
+		
 		log.info(hotel.getHotelName());
 		return hotel;
 	}

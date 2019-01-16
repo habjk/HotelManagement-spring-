@@ -81,6 +81,7 @@
                         <li><a href="register/hotel">Register</a></li>
                         <li><a href="about.html">About</a></li>
                         <li><a href="contact.html">Contact</a></li>
+                        <li><a th:href="@{/logout}"/>Logout</a></li>
                     </ul>
                 </div>
             </div>
@@ -94,7 +95,7 @@
 
 <aside id="colorlib-hero">
 	<div th:object="${images}">
-		<img alt="" th:src="*{pic}">
+	<!-- 	<img alt="" th:src="*{pic}"> -->
 	</div>
     <div class="flexslider" th:object="${profile}">
         <ul class="slides">

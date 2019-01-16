@@ -1,5 +1,5 @@
 <!doctype html>
-<html xmlns:th="http://www.thymeleaf.org">
+<html lang="en">
   <head>
     <title>contact</title>
     <meta charset="utf-8">
@@ -7,18 +7,32 @@
 
     <link href="https://fonts.googleapis.com/css?family=Playfair+Display:400,700,900|Rubik:300,400,700" rel="stylesheet">
 
-    <link rel="stylesheet" href="css/bootstrap.css">
-    <link rel="stylesheet" href="css/animate.css">
-    <link rel="stylesheet" href="css/owl.carousel.min.css">
+    <link rel="stylesheet" th:href="@{/css/bootstrap.css}">
+    <link rel="stylesheet" th:href="@{css/animate.css}">
+   <link rel="stylesheet" th:href="@{css/owl.carousel.min.css}">
 
-    <link rel="stylesheet" href="fonts/ionicons/css/ionicons.min.css">
-    <link rel="stylesheet" href="fonts/fontawesome/css/font-awesome.min.css">
-    <link rel="stylesheet" href="css/magnific-popup.css">
+    <link rel="stylesheet" th:href="@{fonts/ionicons/css/ionicons.min.css}">
+    <link rel="stylesheet" th:href="@{fonts/fontawesome/css/font-awesome.min.css}">
+    <link rel="stylesheet" href="@{css/magnific-popup.css}">
 
     <!-- Theme Style -->
-    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" th:href="@{css/style.css}">
+    
+     <meta charset="utf-8" />
+	  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+	  <meta name="viewport" content="width=device-width, initial-scale=1" />
+	  <meta name="description" content="User account registration" />
+	  <meta name="author" content="Amir Boroumand" />
+	  <link rel="icon" href="favicon.ico" />
+	   <!-- Bootstrap core CSS -->
+	  <link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
+	  rel="stylesheet"
+	  integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u"
+	  crossorigin="anonymous" />
+	
+	  <link th:href="@{css/style.css}" rel="stylesheet" />
   </head>
-  <style type="text/css">
+    <style th:type="@{text/css}">
     footer{
       background: #302939;
 
@@ -49,18 +63,30 @@
 
           <div class="collapse navbar-collapse navbar-light" id="navbarsExample05">
             <ul class="navbar-nav ml-auto pl-lg-5 pl-0">
-             
-              
               <li class="nav-item">
-                <a class="nav-link" href="#" th:href="@{/registration}">Register Hotel</a>
+                <a class="nav-link" th:href="index.html">Home</a>
               </li>
+              <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="rooms.html" id="dropdown04" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Delate</a>
+                <div class="dropdown-menu" aria-labelledby="dropdown04">
+                  <a class="dropdown-item" href="rooms.html">User</a>
+                  <a class="dropdown-item" href="rooms.html">Hotel Rooms</a>
+                  <a class="dropdown-item" href="rooms.html">Commment</a>
+                  <a class="dropdown-item" href="rooms.html">Rooms</a>
+                </div>
+
+              </li>
+            
               <li class="nav-item">
                 <a class="nav-link " href="about.html">About</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link active" href="contact.html">Contact</a>
+                <a class="nav-link active" href="register.html">Register Admin</a>
               </li>
 
+               <li class="nav-item cta">
+                <a class="nav-link" href="booknow.html"><span>Request</span></a>
+              </li>
             </ul>
             
           </div>
@@ -77,7 +103,7 @@
           <div class="col-md-12 text-center">
 
             <div class="mb-5 element-animate">
-              <h1>Login</h1>
+             <h1>Welcome To EHotel</h1>
               <p>Discover our world's #1 Luxury hotel.</p>
             </div>
 
@@ -87,84 +113,107 @@
     </section>
     <!-- END section -->
 
+
+
+
     <section class="site-section">
       <div class="container">
         <div class="row">
           <div class="col-md-6">
-            <h2 class="mb-5">login Form</h2>
-          <form th:action="@{/login}" method="post">
-                  <div th:if="${param.error}">
-						<div class="alert alert-danger">Invalid username or
-							password.</div>
-					</div>
-					<div th:if="${param.logout}">
-						<div class="alert alert-info">You have been logged out.</div>
-					</div>
-                   <div class="row">
-                    <div class="col-md-12 form-group">
-                      <label for="username">Email</label>: <input type="email"
-							id="username" name="username" class="form-control"
-							autofocus="autofocus" placeholder="Email" required/>
-                    </div>
-                  </div>
+            <h3 class="mb-5" th:text="Register"></h3>
+            
+            <form autocomplete="off" th:action=@{/registrationAdmin}   th:object="${registerAdmin}" method="post" class="m-t" role="form"
+               data-toggle="validator">
+               
+               <div th:if="${confirmationMessage}" class="alert alert-success"
+                         role="alert" th:text=${confirmationMessage}></div>
 
+			          <div th:if="${errorMessage}"
+			            class="alert alert-danger" role="alert"
+			            th:text="${errorMessage}"></div>
+			          
+			          
+			           <div th:if="${#fields.hasErrors('password')}"
+					          th:errors="*{password}"
+					          class="validation-message alert alert-danger" role="alert"></div>
 
-                  <div class="row">
+				       <!--  <div th:if="${#fields.hasErrors('lastName')}"
+				          th:errors="*{lastName}"
+				          class="validation-message alert alert-danger" role="alert"></div> -->
+
+				        <div th:if="${#fields.hasErrors('email')}" th:errors="*{email}"
+				          class="validation-message alert alert-danger" role="alert"></div>
+			           
+			           
+			          
+			           <div class="row">
                     <div class="col-md-12 form-group">
-                      <label for="password">Password</label>: <input type="password"
-							id="password" name="password" class="form-control"
-							placeholder="Password" required minlength="8"/>
-                    </div>
-                  </div>
-                 
-                <!--   <div class="row">
+			           <div class="form-group input-group has-feedback">
+				          <span class="input-group-addon">
+				            <span class="glyphicon glyphicon-envelope"></span>
+				          </span>
+				          <input type="email" th:field="*{email}" id="email"  name="email"
+				            placeholder="Email Address" class="form-control"
+				            data-error="This email address is invalid" required />
+				          <span class="glyphicon form-control-feedback"
+				            aria-hidden="true"></span>
+				
+				        </div>
+				        </div>
+				        </div>
+       
+			           
+			           
+			          
+			       <div class="row">
                     <div class="col-md-12 form-group">
-                      <label for="message">Write Message</label>
-                      <textarea name="message" id="message" class="form-control " cols="30" rows="8"></textarea>
-                    </div>
-                  </div> -->
+			           <div class="form-group input-group has-feedback">
+				          <label th:if="${#fields.hasErrors('password')}"
+				            th:errors="*{password}" class="validation-message"></label>
+				          <span class="input-group-addon">
+				            <span class="glyphicon glyphicon-user"></span>
+				          </span>
+				          
+				          <input type="password" th:field="*{password}"  id="password" height="25px" name="password"
+				            placeholder="password" class="form-control" required  />
+				          <span class="glyphicon form-control-feedback"
+				            aria-hidden="true"></span>
+				        </div>
+			          </div>
+			          </div>
+			          
+			          
+			          
+			          
+			                    
+                
+                
                   <div class="row">
                     <div class="col-md-6 form-group">
-                      <!-- <input type="submit" value="login" class="btn btn-primary"> -->
+                     
                     </div>
                   </div>
                    <div class="row">
                     <div class="col-md-6 form-group">
-                      <input type="submit" name="login-submit" id="login-submit"
-									class="form-control btn btn-primary" value="Log In" />
-								<input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}"/>
-                    </div>
+                    <button type="submit" class="btn btn-lg btn-primary"  style="margin-right:10px;width: 274px">Register</button>
+                    
+                      </div>
                   </div>
                 </form>
-                 <!-- <div class="media-body">
-                <h3 class="mt-0"><a href="#">Presidential Room</a></h3>
-                <ul class="room-specs">
-                  <li><span class="ion-ios-people-outline"></span> 2 Guests</li>
-                  <li><span class="ion-ios-crop"></span> 22 ft <sup>2</sup></li>
-                </ul>
-                <p>if you have not account register now </p><br>
-                <p><a href="#" class="btn btn-primary btn-sm" style="width: 274px">Register</a></p>
-                  <p>welcome to register your hotel if you do not register yet. </p>
-                  <p><a href="#" class="btn btn-primary btn-sm" style="width: 274px">Register hotels</a></p>
-              </div> -->
+                
+                
               </div>
               <div class="col-md-1"></div>
               <div class="col-md-5">
-                <h3 class="mb-5">Sample Rooms</h3>
+                
                 <p class="mb-5"><img src="images/img_4.jpg" alt="" class="img-fluid"></p>
-               <!--  <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Vitae labore aspernatur cumque inventore voluptatibus odit doloribus! Ducimus, animi perferendis repellat. Ducimus harum alias quas, quibusdam provident ea sed, sapiente quo.</p>
-                <p>Ullam cumque eveniet, fugiat quas maiores, non modi eos deleniti minima, nesciunt assumenda sequi vitae culpa labore nulla! Cumque vero, magnam ab optio quidem debitis dignissimos nihil nesciunt vitae impedit!</p> -->
+                <p>Ullam cumque eveniet, fugiat quas maiores, non modi eos deleniti minima, nesciunt assumenda sequi vitae culpa labore nulla! Cumque vero, magnam ab optio quidem debitis dignissimos nihil nesciunt vitae impedit!</p> 
                  <div class="media-body">
-                <h3 class="mt-0"><a href="#">Presidential Room</a></h3>
+            
                 <ul class="room-specs">
-                <!--   <li><span class="ion-ios-people-outline"></span> 2 Guests</li>
-                  <li><span class="ion-ios-crop"></span> 22 ft <sup>2</sup></li> -->
+                
                 </ul>
-                <p>If you have not account register now </p>
-                <p><a href="#" th:href="@{/register/user}" class="btn btn-primary btn-sm" style="width: 274px">Register</a></p>
-                  <p>Welcome to register your hotel if you do not register yet. </p>
-                  <p><a href="#" th:href="@{/registration}" class="btn btn-primary btn-sm" style="width: 274px">Register hotels</a></p>
-              </div>
+                </div>
               </div>
 
         </div>
@@ -173,6 +222,9 @@
     </section>
     <!-- END section -->
 
+
+   
+   
 
     <section class="section-cover" data-stellar-background-ratio="0.5" style="background-image: url(images/img_5.jpg);">
       <div class="container">
@@ -186,7 +238,9 @@
       </div>
     </section>
     <!-- END section -->
+                 <section class="section-cover" data-stellar-background-ratio="0.5" style="background-image: url(images/img_5.jpg);">
 
+                </section>
 
 <footer id="colorlib-footer" role="contentinfo" style="width: 100%">
     <div class="container" style="width: 100%">
@@ -261,5 +315,19 @@
     <script src="js/magnific-popup-options.js"></script>
 
     <script src="js/main.js"></script>
+    
+    <!-- jQuery-->
+  <script src="//ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    
+  <!-- Bootstrap -->
+  <script
+    src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"
+    integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa"
+    crossorigin="anonymous"></script>
+
+  <!-- Bootstrap Validator plugin -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/1000hz-bootstrap-validator/0.11.9/validator.min.js"></script>
+    
+    
   </body>
 </html>

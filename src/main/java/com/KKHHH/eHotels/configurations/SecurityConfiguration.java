@@ -22,6 +22,10 @@ public class SecurityConfiguration extends WebSecurityConfigurerAdapter {
 
     @Autowired
     private UserService userService;
+    
+	
+	@Autowired
+	private BCryptPasswordEncoder bCryptPasswordEncoder;
 
     @Override
     public void configure(WebSecurity web) throws Exception {
@@ -32,12 +36,13 @@ public class SecurityConfiguration extends WebSecurityConfigurerAdapter {
     protected void configure(HttpSecurity http) throws Exception {
 
         http
-                .csrf().disable()
+                
 
                 .authorizeRequests()
 
                     .antMatchers(
                             "/registration**",
+                            "/register/user",
                             "/js/**",
                             "/css/**",
                             "/img/**",
@@ -45,9 +50,11 @@ public class SecurityConfiguration extends WebSecurityConfigurerAdapter {
                     .anyRequest().authenticated()
                 .and()
                     .formLogin()
-                        .loginPage("/login")
+                        .loginPage("/login").
+                        failureUrl("/login?error=true")
+     					.defaultSuccessUrl("/default").permitAll()
 
-                            .permitAll()
+                            
                 .and()
                     .logout()
                         .invalidateHttpSession(true)
@@ -73,7 +80,8 @@ public class SecurityConfiguration extends WebSecurityConfigurerAdapter {
 
     @Override
     protected void configure(AuthenticationManagerBuilder auth) throws Exception {
-        auth.authenticationProvider(authenticationProvider());
+    	auth.userDetailsService(userService)
+		  .passwordEncoder(bCryptPasswordEncoder);
     }
 
 }
