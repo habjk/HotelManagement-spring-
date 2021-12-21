@@ -6,6 +6,7 @@ import org.springframework.data.repository.CrudRepository;
 import org.springframework.security.core.userdetails.UserDetails;
 
 import com.KKHHH.eHotels.domains.User;
+import org.springframework.stereotype.Repository;
 
 public interface UserRepository extends CrudRepository<User,String>{
 
@@ -14,7 +15,7 @@ public interface UserRepository extends CrudRepository<User,String>{
 
 	List<User> findAllByRole(String role);
 
-	UserDetails findByEmail(String email);
+	User findByEmail(String email);
 
 
 

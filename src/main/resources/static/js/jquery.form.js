@@ -202,7 +202,7 @@ $.fn.ajaxSubmit = function(options) {
 
     var jqxhr;
 
-    // options.iframe allows user to force iframe mode
+    // options.iframe allows users to force iframe mode
     // 06-NOV-09: now defaulting to iframe mode if file input is detected
     if (options.iframe !== false && (options.iframe || shouldUseFrame)) {
         // hack to fix Safari hang (thanks to Tim Molendijk for this)
@@ -622,7 +622,7 @@ $.fn.ajaxSubmit = function(options) {
                 var dt = (s.dataType || '').toLowerCase();
                 var scr = /(json|script|text)/.test(dt);
                 if (scr || s.textarea) {
-                    // see if user embedded response in textarea
+                    // see if users embedded response in textarea
                     var ta = doc.getElementsByTagName('textarea')[0];
                     if (ta) {
                         xhr.responseText = ta.value;

@@ -52,22 +52,29 @@ public class Hotel {
 	private short star;
 	private String moto;
 	private String description;
-
-	@OneToMany(targetEntity=Room.class)
-	private List<Room> rooms= new ArrayList<>();
 	
-	public void addRoom(Room room) {
-		this.rooms.add(room);
-	}
+	@NotNull
+	private short isConfirmed=0;
+
+//	@OneToMany(targetEntity=Room.class)
+//	private List<Room> rooms= new ArrayList<>();
+	
+//	public void addRoom(Room room) {
+//		this.rooms.add(room);
+//	}
 	
 	@OneToMany(mappedBy="hotel")
 	private Set<User> user;
 
+	private User getUser() {
+		return null;
+	}
 	
 	
-
-	@OneToMany(mappedBy="hotelId")
-	private Set<ImageModel> imageModel;
+	
+//
+//	@OneToMany(mappedBy="hotelId")
+//	private Set<ImageModel> imageModel;
 	
 
 }

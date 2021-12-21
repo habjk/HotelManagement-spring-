@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="en">
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
   <head>
     <title>EthioHotel a Hotel Template</title>
     <meta charset="utf-8">
@@ -105,14 +105,11 @@
         <div class="row">
           <div class="col-md-6">
             <h2 class="mb-5">Reservation Form</h2>
-<<<<<<< HEAD
             
                 <form method="post" th:object="${reserve}" th:action="@{/register/booknow}" >
 
 
-                       <!--  <h2>Search hotel to Reserve</h2> -->                    
-                      
-=======
+                       <!--  <h2>Search hotel to Reserve</h2> -->
                 <form action="#" method="post">
 
 
@@ -121,7 +118,6 @@
                       <input type="text" placeholder="Enter Hotel.." name="search" style="width: 500px;">
                       <button type="submit"><i class="fa fa-search"></i></button>
                       </form>
->>>>>>> bbf28b4ac41bc566c82baba6ac4108fee1136e42
                       <br>
                       <br>
 
@@ -131,16 +127,12 @@
                           <label for="">Arrival Date</label>
                           <div style="position: relative;">
                             <span class="fa fa-calendar icon" style="position: absolute; right: 10px; top: 10px;"></span>
-<<<<<<< HEAD
                             <input type='text' class="form-control" th:field="*{arrivaldate}" id='arrival_date' />
                           	
                           	<span class="text-danger" th:if="${#fields.hasErrors('arrivaldate')}"
                           							th:errors="*{arrivaldate}">Arrival date Error </span>
-                         
-                          
-=======
-                            <input type='text' class="form-control" id='arrival_date' />
->>>>>>> bbf28b4ac41bc566c82baba6ac4108fee1136e42
+
+                            <!--<input type='text' class="form-control" id='arrival_date' />-->
                           </div>
                       </div>
 
@@ -149,14 +141,11 @@
                           <label for="">Departure Date</label>
                           <div style="position: relative;">
                             <span class="fa fa-calendar icon" style="position: absolute; right: 10px; top: 10px;"></span>
-<<<<<<< HEAD
                             <input type='text' th:field="*{departuredate}" class="form-control"  id='departure_date' />
                           	<span class="text-danger" th:if="${#fields.hasErrors('departuredate')}"
                           							th:errors="*{departuredate}">Departure date Error </span>
-                          
-=======
-                            <input type='text' class="form-control" id='departure_date' />
->>>>>>> bbf28b4ac41bc566c82baba6ac4108fee1136e42
+
+                           <!-- <input type='text' class="form-control" id='departure_date' />-->
                           </div>
                       </div>
                       
@@ -164,7 +153,6 @@
 
 
                   <div class="row">
-<<<<<<< HEAD
                     <div class="col-md-4 form-group">
                       <label for="room">Room</label>
                       <select name="" id="room" th:field="*{room}" class="form-control">
@@ -208,7 +196,6 @@
                       
                       <span class="text-danger" th:if="${#fields.hasErrors('guests')}"
                           							th:errors="*{guests}">Guests Error </span>
-=======
                     <div class="col-md-6 form-group">
                       <label for="room">Room</label>
                       <select name="" id="room" class="form-control">
@@ -229,32 +216,24 @@
                         <option value="">4 Guests</option>
                         <option value="">5+ Guests</option>
                       </select>
->>>>>>> bbf28b4ac41bc566c82baba6ac4108fee1136e42
                     </div>
                   </div>
                   <div class="row">
                     <div class="col-md-12 form-group">
                       <label for="email">Email</label>
-<<<<<<< HEAD
                       <input type="email" th:field="*{email}" id="email" class="form-control ">
                       
                       <span class="text-danger" th:if="${#fields.hasErrors('email')}"
                           							th:errors="*{email}">Email Error </span>
-  							
-                          						
-=======
-                      <input type="email" id="email" class="form-control ">
->>>>>>> bbf28b4ac41bc566c82baba6ac4108fee1136e42
+
+                     <!-- <input type="email" id="email" class="form-control ">-->
                     </div>
                   </div>
                   <div class="row">
                     <div class="col-md-12 form-group">
                       <label for="message">Write a Note</label>
-<<<<<<< HEAD
                       <textarea name="message" id="message" th:field="*{note}" class="form-control " cols="30" rows="8"></textarea>
-=======
-                      <textarea name="message" id="message" class="form-control " cols="30" rows="8"></textarea>
->>>>>>> bbf28b4ac41bc566c82baba6ac4108fee1136e42
+                      <!--<textarea name="message" id="message" class="form-control " cols="30" rows="8"></textarea>-->
                     </div>
                   </div>
                   <div class="row">

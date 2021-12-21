@@ -11,7 +11,6 @@ import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
-import com.KKHHH.eHotels.domains.Hotel;
 import com.KKHHH.eHotels.domains.User;
 import com.KKHHH.eHotels.repositories.UserRepository;
 import com.KKHHH.eHotels.services.UserServiceImpl;

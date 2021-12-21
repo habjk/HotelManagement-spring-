@@ -1,5 +1,7 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en"
+	  xmlns="http://www.w3.org/1999/xhtml"
+	  xmlns:th="http://www.thymeleaf.org">
 <head>
 <!-- Required meta tags -->
 <meta charset="utf-8">
@@ -93,7 +95,6 @@
 
 
 
-
 	<aside id="colorlib-hero">
 		<div class="flexslider">
 			<ul class="slides">
@@ -106,7 +107,7 @@
 									<h2>Welcome to the EHotel Reservation</h2>
 									<h1>EHotel Hotel Reservation</h1>
 									<p>
-										<a class="btn btn-primary btn-demo" href="pages/Hotels.html"></i>
+										<a class="btn btn-primary btn-demo" th:href="@{/viewHotels}" ></i>
 											View Hotels</a> <a class="btn btn-primary btn-learn"
 											href="register/hotel">Join Us</a>
 									</p>
@@ -124,7 +125,7 @@
 									<h2>Discover &amp; Enjoy &amp; Reserve</h2>
 									<h1>Everything you need in EHotel</h1>
 									<p>
-										<a class="btn btn-primary btn-demo" href="pages/Hotels.html"></i>
+										<a class="btn btn-primary btn-demo" th:href="@{/viewHotels}"></i>
 											View Hotels</a> <a class="btn btn-primary btn-learn"
 											href="register/hotel">Join Us</a>
 									</p>
@@ -142,7 +143,7 @@
 									<h2>You Are Invited To Reserve Where Ever You Want!</h2>
 									<h1>We Know How To Please You</h1>
 									<p>
-										<a class="btn btn-primary btn-demo" href="pages/Hotels.html"></i>
+										<a class="btn btn-primary btn-demo" th:href="@{/viewHotels}">
 											View Hotels</a> <a class="btn btn-primary btn-learn">Book
 											Know</a>
 									</p>

@@ -59,8 +59,9 @@ public class User implements UserDetails{
         cascade =  CascadeType.ALL,
         mappedBy = "user")
 	    private Role role;
+	   // private Collection<Role> roles;
 
-	    public User() {
+	public User() {
 	    }
 
 	    public User(String firstName, String lastName, String email, String password) {
@@ -111,8 +112,11 @@ public class User implements UserDetails{
 	    public void setPassword(String password) {
 	        this.password = password;
 	    }
+	   /* public Hotel getHotel() {
+	    	return this.hotel;
+	    }
+	    public Role getRole() { return role;}*/
 
-	 
 
 	    @Override
 	    public String toString() {

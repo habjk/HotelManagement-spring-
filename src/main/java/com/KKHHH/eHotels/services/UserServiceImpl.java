@@ -12,11 +12,15 @@ import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Service;
 
+import com.KKHHH.eHotels.controllers.DefaultController;
 import com.KKHHH.eHotels.domains.Role;
 import com.KKHHH.eHotels.domains.User;
 import com.KKHHH.eHotels.repositories.RoleRepositiory;
 import com.KKHHH.eHotels.repositories.UserRepository;
 
+import lombok.extern.java.Log;
+import lombok.extern.slf4j.Slf4j;
+@Slf4j
 @Service
 public class UserServiceImpl implements UserService {
 
@@ -91,6 +95,8 @@ public class UserServiceImpl implements UserService {
 		UserDetails userDetails = userRepository.findByEmail(email);
 		
 		if(userDetails != null) {
+			log.info(userDetails.toString()
+					);
 			return  userDetails;
 		}
 		throw new UsernameNotFoundException("User '" + email+ "' not found");
